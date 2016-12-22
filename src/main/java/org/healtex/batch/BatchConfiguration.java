@@ -22,7 +22,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 import org.healtex.batch.processor.FirstPassItemProcessor;
 import org.healtex.batch.processor.SecondPassItemProcessor;
+import org.healtex.batch.listener.FirstPassStepExecutionListener;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
+import org.healtex.batch.listener.SecondPassStepExecutionListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.model.Document;
 import org.healtex.model.GATEDocument;
@@ -120,6 +122,7 @@ public class BatchConfiguration {
                 .reader(reader())
                 .processor(processor1())
                 .writer(firstPassWriter())
+                .listener(new FirstPassStepExecutionListener())
                 .build();
     }
 
@@ -130,6 +133,7 @@ public class BatchConfiguration {
                 .reader(reader())
                 .processor(processor2())
                 .writer(secondPassWriter())
+                .listener(new SecondPassStepExecutionListener())
                 .build();
     }
     // end::jobstep[]
