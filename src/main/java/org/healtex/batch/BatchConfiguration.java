@@ -24,6 +24,7 @@ import org.healtex.batch.processor.FirstPassItemProcessor;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.model.Document;
+import org.healtex.model.GATEDocument;
 
 @Configuration
 @EnableBatchProcessing
@@ -64,10 +65,10 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public FlatFileItemWriter<Document> writer() {
-        FlatFileItemWriter<Document> writer = new FlatFileItemWriter<Document>();
-        writer.setLineAggregator(new LineAggregator<Document>() {
-            public String aggregate(Document doc) {
+    public FlatFileItemWriter<GATEDocument> writer() {
+        FlatFileItemWriter<GATEDocument> writer = new FlatFileItemWriter<GATEDocument>();
+        writer.setLineAggregator(new LineAggregator<GATEDocument>() {
+            public String aggregate(GATEDocument doc) {
                 return doc.toString();
             }
         });
@@ -92,7 +93,7 @@ public class BatchConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .<Document, Document> chunk(10)
+                .<Document, GATEDocument> chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())

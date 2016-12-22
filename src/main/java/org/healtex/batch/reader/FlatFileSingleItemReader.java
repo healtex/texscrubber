@@ -113,6 +113,8 @@ public class FlatFileSingleItemReader extends ItemStreamSupport implements
                 Document doc = new Document();
                 doc.setContent(sb.toString());
                 doc.setFileName(resource.getFilename());
+                doc.setPerPersonDocumentId("placeholder");
+                doc.setPersonId("placeholder");
                 // TODO: parsing of person ID from file name
                 return doc;
             }
