@@ -3,6 +3,7 @@ package org.healtex.model;
 import java.util.List;
 
 public class GATEDocument {
+    private String annotatedContent;
     private String fileName;
     private String personId;
     private String perPersonDocumentId;
@@ -10,6 +11,14 @@ public class GATEDocument {
 
     public GATEDocument() {
 
+    }
+
+    public void setAnnotatedContent(String annotatedContent) {
+        this.annotatedContent = annotatedContent;
+    }
+
+    public String getAnnotatedContent() {
+        return annotatedContent;
     }
 
     public void setFileName(String fileName) {

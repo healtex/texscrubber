@@ -19,6 +19,9 @@ public class SecondPassItemProcessor implements ItemProcessor<Document, GATEDocu
         GATEDocument gateDoc = new GATEDocument();
 
         // TODO: read NE list from first pass
+        // TODO: annotate the raw text
+        // TODO: remove identifiers from annotated text
+        gateDoc.setAnnotatedContent(doc.getContent() + " after deidentification");
 
         gateDoc.setFileName(doc.getFileName());
         gateDoc.setPerPersonDocumentId(doc.getPerPersonDocumentId());
