@@ -12,6 +12,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.batch.item.file.transform.LineAggregator;
@@ -26,6 +27,7 @@ import org.healtex.batch.listener.FirstPassStepExecutionListener;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.listener.SecondPassStepExecutionListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
+import org.healtex.batch.writer.NamedEntitiesWriter;
 import org.healtex.model.Document;
 import org.healtex.model.GATEDocument;
 
@@ -74,17 +76,9 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public FlatFileItemWriter<GATEDocument> firstPassWriter() {
-        FlatFileItemWriter<GATEDocument> writer = new FlatFileItemWriter<GATEDocument>();
-        writer.setLineAggregator(new LineAggregator<GATEDocument>() {
-            public String aggregate(GATEDocument doc) {
-                return doc.toString();
-            }
-        });
-        // TODO: write to a directory instead of a file
-        File file = new File("/Users/kennethlui/workspace/texscrubber/output.txt");
-        FileSystemResource res = new FileSystemResource(file);
-        writer.setResource(res);
+    public ItemWriter<GATEDocument> firstPassWriter() {
+        // TODO: change to a user-specific directory
+        NamedEntitiesWriter writer = new NamedEntitiesWriter("/Users/kennethlui/workspace/texscrubber/dev-test-output");
         return writer;
     }
 
