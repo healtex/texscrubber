@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 import org.healtex.batch.processor.FirstPassItemProcessor;
+import org.healtex.batch.processor.SecondPassItemProcessor;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.model.Document;
@@ -43,6 +44,7 @@ public class BatchConfiguration {
     public MultiResourceItemReader<Document> reader() {
         MultiResourceItemReader<Document> reader = new MultiResourceItemReader<Document>();
 
+        // TODO: change to a user-specific directory
         File folder = new File("/Users/kennethlui/workspace/texscrubber/sample-input/");
         List<Resource> resList = new ArrayList<Resource>();
 
@@ -60,19 +62,40 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public FirstPassItemProcessor processor() {
+    public FirstPassItemProcessor processor1() {
         return new FirstPassItemProcessor();
     }
 
     @Bean
-    public FlatFileItemWriter<GATEDocument> writer() {
+    public SecondPassItemProcessor processor2() {
+        return new SecondPassItemProcessor();
+    }
+
+    @Bean
+    public FlatFileItemWriter<GATEDocument> firstPassWriter() {
         FlatFileItemWriter<GATEDocument> writer = new FlatFileItemWriter<GATEDocument>();
         writer.setLineAggregator(new LineAggregator<GATEDocument>() {
             public String aggregate(GATEDocument doc) {
                 return doc.toString();
             }
         });
+        // TODO: write to a directory instead of a file
         File file = new File("/Users/kennethlui/workspace/texscrubber/output.txt");
+        FileSystemResource res = new FileSystemResource(file);
+        writer.setResource(res);
+        return writer;
+    }
+
+    @Bean
+    public FlatFileItemWriter<GATEDocument> secondPassWriter() {
+        FlatFileItemWriter<GATEDocument> writer = new FlatFileItemWriter<GATEDocument>();
+        writer.setLineAggregator(new LineAggregator<GATEDocument>() {
+            public String aggregate(GATEDocument doc) {
+                return doc.toString() + " 2";
+            }
+        });
+        // TODO: write to a directory instead of a file
+        File file = new File("/Users/kennethlui/workspace/texscrubber/output2.txt");
         FileSystemResource res = new FileSystemResource(file);
         writer.setResource(res);
         return writer;
@@ -85,8 +108,8 @@ public class BatchConfiguration {
         return jobBuilderFactory.get("texscrubberJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
-                .flow(step1())
-                .end()
+                .start(step1())
+                .next(step2())
                 .build();
     }
 
@@ -95,8 +118,18 @@ public class BatchConfiguration {
         return stepBuilderFactory.get("step1")
                 .<Document, GATEDocument> chunk(10)
                 .reader(reader())
-                .processor(processor())
-                .writer(writer())
+                .processor(processor1())
+                .writer(firstPassWriter())
+                .build();
+    }
+
+    @Bean
+    public Step step2() {
+        return stepBuilderFactory.get("step2")
+                .<Document, GATEDocument> chunk(10)
+                .reader(reader())
+                .processor(processor2())
+                .writer(secondPassWriter())
                 .build();
     }
     // end::jobstep[]
