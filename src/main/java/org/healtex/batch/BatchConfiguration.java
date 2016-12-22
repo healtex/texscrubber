@@ -13,7 +13,6 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.file.FlatFileItemWriter;
-import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.batch.item.file.transform.LineAggregator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,17 +54,7 @@ public class BatchConfiguration {
         Resource[] resources = resList.toArray(new Resource[resList.size()]);
         reader.setResources(resources);
 
-        FlatFileSingleItemReader<Document> delegate = new FlatFileSingleItemReader<Document>(){{
-            setLineMapper(new LineMapper<Document>() {
-                public Document mapLine(String line, int lineNumber) {
-                    Document doc = new Document();
-                    doc.setContent(line);
-                    doc.setFileName(line);
-                    return doc;
-                }
-            });
-        }};
-        reader.setDelegate(delegate);
+        reader.setDelegate(new FlatFileSingleItemReader());
         return reader;
     }
 

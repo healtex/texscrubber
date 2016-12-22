@@ -18,7 +18,6 @@ import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.ItemStreamSupport;
 
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
-import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.BufferedReaderFactory;
 import org.springframework.batch.item.file.DefaultBufferedReaderFactory;
 
@@ -26,8 +25,10 @@ import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.ExecutionContext;
 
-public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
-    ResourceAwareItemReaderItemStream<T>, InitializingBean {
+import org.healtex.model.Document;
+
+public class FlatFileSingleItemReader extends ItemStreamSupport implements
+    ResourceAwareItemReaderItemStream<Document>, InitializingBean {
 
     private static final Logger log = LoggerFactory.getLogger(FlatFileSingleItemReader.class);
 
@@ -41,8 +42,6 @@ public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
     private boolean noInput = false;
 
     private String encoding = DEFAULT_CHARSET;
-
-    private LineMapper<T> lineMapper;
 
     private boolean strict = true;
 
@@ -59,14 +58,6 @@ public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
     public void setStrict(boolean strict) {
       this.strict = strict;
     }
-
-    /**
-       * Setter for line mapper. This property is required to be set.
-       * @param lineMapper maps line to item
-       */
-      public void setLineMapper(LineMapper<T> lineMapper) {
-        this.lineMapper = lineMapper;
-      }
 
     /**
      * Setter for the encoding for this input source. Default value is #DEFAULT_CHARSET.
@@ -95,7 +86,7 @@ public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
         this.resource = resource;
     }
 
-    public T read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+    public Document read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
         if (noInput) {
             return null;
         }
@@ -119,7 +110,11 @@ public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
             }
 
             try {
-                return lineMapper.mapLine(sb.toString(), 0);
+                Document doc = new Document();
+                doc.setContent(sb.toString());
+                doc.setFileName(resource.getFilename());
+                // TODO: parsing of person ID from file name
+                return doc;
             }
             catch (Exception ex) {
                 throw new ParseException("Parsing error in resource=[" + resource.getDescription() + "]", ex);
@@ -185,7 +180,7 @@ public class FlatFileSingleItemReader<T> extends ItemStreamSupport implements
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Assert.notNull(lineMapper, "LineMapper is required");
+
     }
 
 }
