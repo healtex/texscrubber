@@ -42,6 +42,9 @@ dependencies {
     compile 'org.springframework.batch:spring-batch-core:3.0.7.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-batch'
 
+    // In memory database
+    compile 'org.hsqldb:hsqldb'
+
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
