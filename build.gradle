@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+
+version = '0.1'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'texscrubber',
+                   'Implementation-Version': version
+    }
+}
+
+dependencies {
+	//GATE 8.2
+	compile group: 'uk.ac.gate', name: 'gate-core', version: '8.2'
+
+	//Spring Batch 
+   	compile 'org.springframework.batch:spring-batch-core:3.0.7.RELEASE'
+   	compile 'org.springframework.boot:spring-boot-starter-batch'
+    }
+
+

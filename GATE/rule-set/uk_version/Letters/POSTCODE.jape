@@ -1,0 +1,12 @@
+Phase: postcode
+Input: Token
+Options: control = appelt
+
+Rule: postcode
+(
+{Token.string ==~ "[A-Z]{1,2}"}{Token.string ==~ "[0-9]{1,2}"}{Token.string ==~ "[0-9]{1,2}"}{Token.string ==~ "[A-Z]{1,2}"}|
+{Token.string ==~ "[A-Z]{1,2}"}{Token.string ==~ "[0-9]{2,4}"}{Token.string ==~ "[A-Z]{1,2}"}|
+{Token.string ==~ "[A-Z]{1,2}"}{Token.string ==~ "[0-9]{1,2}"}{Token.string ==~ "[A-Z]{3}"} //a common error 
+):label
+-->
+:label.POSTCODE = { CATEGORY = "LOCATION"}

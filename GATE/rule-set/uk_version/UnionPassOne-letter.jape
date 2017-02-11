@@ -1,0 +1,17 @@
+Phase: unionPassOne
+Input: HOSPITAL CITY-TVD STREET POSTCODE COUNTY COUNTRY AGE OCCUPATION DOB ID URL EMAIL PHONE FAX MEDICALSTAFF PATIENT NAME LOCATION
+Options: control = all
+
+Rule: unionPassOne
+(  
+{HOSPITAL}|{CITY-TVD}|{STREET}|{POSTCODE}|{COUNTY}|{COUNTRY}|{AGE}|{DOB}|{ID}|{URL}|{EMAIL}|{PHONE}|{FAX}|{MEDICALSTAFF}|{PATIENT}|{NAME}|{LOCATION}|{OCCUPATION}
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "ALL");   
+features.put("RULE", "union-letter");  
+outputAS.add(label.firstNode(), label.lastNode(), "DEIDED", features);  
+}
