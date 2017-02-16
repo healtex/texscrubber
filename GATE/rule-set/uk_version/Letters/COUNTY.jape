@@ -1,0 +1,36 @@
+Phase: county
+Input: Token Lookup
+Options: control = appelt
+
+MACRO: POSTNEG
+(
+{!Token.string ==~"(?i)Hospital|Close|Business|Road|Drive|Avenue|View|Lane|Way|Grove"}
+)
+
+
+Rule: County1   
+(  
+{Lookup.minorType == county}  
+):label
+(POSTNEG):post_neg
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "LOCATION");   
+features.put("RULE", "county1");  
+outputAS.add(label.firstNode(), label.lastNode(), "COUNTY", features);  
+}
+
+
+/* Removed from dictionary
+Manchester
+Wrexham
+Rutland
+
+
+
+
+
+*/

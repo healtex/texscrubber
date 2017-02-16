@@ -1,0 +1,11 @@
+Phase: dob
+Input: Token
+Options: control = appelt
+
+Rule: dob
+({Token.string ==~ "(?i)D"}({Token.string == "."})?{Token.string ==~ "(?i)O"}({Token.string == "."})?{Token.string ==~ "(?i)B"}({Token.string == "."})?|{Token.string ==~ "(?i)DOB"}):pre_context
+(
+{Token.string ==~ "[0-9]{2}"}{Token.string ==~ "/|."}{Token.string ==~ "[0-9]{2}"}{Token.string ==~ "/|."}{Token.string ==~ "[0-9]{2,4}"}
+):label
+-->
+:label.DOB = { CATEGORY = "DOB"}

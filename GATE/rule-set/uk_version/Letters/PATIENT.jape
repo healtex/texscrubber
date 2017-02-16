@@ -1,0 +1,110 @@
+Phase: Pt
+Input: Token Split
+Options: control = appelt
+
+/**
+ * Pt names with pre context identifiers |
+ **/
+Rule: PtName1
+Priority: 100
+({Token.string ==~"(?i)RE"}{Token.string ==":"}):pre_context
+(
+({Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps", !Token.string==~"(?)DOB"})?
+):label
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME1", TEXT = :label@string}
+
+/**
+ * Pt names with post context identifiers |
+ **/
+Rule: PtName2
+Priority: 100
+({Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}):pre_content
+(
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})?
+):label
+({Token.string ==~"(?i)D(OB)?"}({Token.string =="."}{Token.string ==~"(?i)O"}{Token.string =="."}{Token.string ==~"(?i)B"})?):post_context
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME2", TEXT = :label@string}
+
+
+/**
+ * Pt names with post context identifiers |
+ **/
+Rule: PtName2b
+Priority: 100
+({Split}):pre_context
+(
+({Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})
+({Token.orth=="upperInitial"}|{Token.orth=="allCaps"})?
+):label
+(({Token.string =="-"})?{Token.string ==~"(?i)DOB"}):post_context
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME2b", TEXT = :label@string}
+
+/**
+ * Pt names with pre context identifiers in text
+ **/
+Rule: PtName3
+Priority: 100
+({Token.string ==~"(?i)I|we"}({Token.string ==~"(?i)will|have"})?{Token.string ==~"seen|saw|review(ed)?"}({Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"})?):pre_context
+(
+({Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"})
+({Token.orth=="upperInitial"})?
+):label
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME3", TEXT = :label@string}
+
+/**
+ * Pt names with post context identifiers in text
+ **/
+Rule: PtName4
+Priority: 100
+(
+({Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"})?
+{Token.orth=="upperInitial", !Token.string ==~"(?i)She|He|There|This|It"}
+):label
+(
+{Token.string ==~ "(?i)attended"}
+|{Token.string =="was"}{Token.string ==~"admitted|reviewed|seen"}
+|{Token.string =="is"}{Token.string =="currently"}
+|{Token.string =="has"}{Token.string =="been"}
+|{Token.string =="'s"}{Token.string ==~"father|mother|parents|scans?"}
+):pre_context
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME4", TEXT = :label@string}
+
+/**
+ * Pt names with post context identifiers: i.e., Name and Address 
+ **/
+Rule: PtName5
+Priority: 100
+({Split}{Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}):pre_context
+(
+{Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}
+{Token.orth=="upperInitial"}
+({Token.orth=="upperInitial"})?
+):label
+({Split}{Token.string==~"[0-9]{1,3}"}):post_content
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME5", TEXT = :label@string}
+
+/**
+ * Include when combining Pt and Dr NAMEs
+ **/
+Rule: PtName5
+Priority: 100
+({Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}):pre_context
+(
+{Token.orth=="upperInitial", !Token.string ==~"(?i)Mr|Mrs|Ms|Miss?"}
+({Token.orth=="upperInitial", !Split})?
+):label
+-->
+:label.PATIENT = { CATEGORY = "NAME", RULE = "PtNAME5", TEXT = :label@string}
+
+

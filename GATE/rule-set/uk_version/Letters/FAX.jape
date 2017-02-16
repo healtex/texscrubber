@@ -1,0 +1,35 @@
+Phase: fax
+Input: Token
+Options: control = appelt
+
+
+Rule: fax1
+(({Token.string ==~ "(?i)Fax"}|{Token.string ==~ "(?i)Facsimile"})({Token.string ==~ "(?i)No|Number"})?({Token.string == ":"})?({Token.string == "-"})?):pre_context
+(
+{Token.string ==~ "[0-9]{5}"}{Token.string ==~ "[0-9]{6}"}|
+{Token.string ==~ "[0-9]{4}"}{Token.string ==~ "[0-9]{7}"}|
+{Token.string ==~ "[0-9]{7}"}{Token.string ==~ "[0-9]{4}"}|
+{Token.string ==~ "[0-9]{4}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{3}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{4}"}
+):label
+-->
+:label.FAX = { CATEGORY = "CONTACT"}
+
+Rule: fax2
+({Token.string ==~ "(?i)Faxed"}{Token.string ==~ "(?i)to"}):pre_context
+(
+{Token.string ==~ "[0-9]{3}"}{Token.string ==~ "[0-9]{4}"}|
+{Token.string ==~ "[0-9]{5}"}{Token.string ==~ "[0-9]{6}"}|
+{Token.string ==~ "[0-9]{4}"}{Token.string ==~ "[0-9]{7}"}|
+{Token.string ==~ "[0-9]{4}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{3}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{4}"}
+):label
+-->
+:label.FAX = { CATEGORY = "CONTACT"}
+
+Rule: faxANDphone
+({Token.string ==~ "(?i)Telephone|Tel"}{Token.string == "/"}{Token.string ==~ "(?i)Fax"}({Token.string ==~ "(?i)Number|No"})?({Token.string == "-"})?):pre_context
+({Token.string ==~ "[0-9]{4}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{3}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{4}"}):tel
+({Token.string == "/"}):no_label
+({Token.string ==~ "[0-9]{4}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{3}"}({Token.string == "-"})?{Token.string ==~ "[0-9]{4}"}):fax
+-->
+:tel.PHONE = { CATEGORY = "CONTACT"},
+:fax.FAX = { CATEGORY = "CONTACT"}

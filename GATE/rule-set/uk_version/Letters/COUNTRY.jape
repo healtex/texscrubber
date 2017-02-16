@@ -1,0 +1,65 @@
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase: COUNTRY
+Input: Token Split
+Options: control = appelt
+
+Rule: getCountry
+Priority: 60
+({!Token.string==~"\\.|\\("}):noAnn
+(
+{Token.string ==~ "(?i)Puerto"}{Token.string ==~ "(?i)Rico"}|{Token.string ==~ "(?i)Sri"}{Token.string ==~ "(?i)Lanka"}|{Token.string ==~ "(?i)Costa"}{Token.string ==~ "(?i)Rica"}|{Token.string ==~ "(?i)United"}{Token.string ==~ "(?i)Kingdom|States"}|{Token.string == "Ivory"}{Token.string == "Coast"}|{Token.string ==~ "(?i)Saudi"}({Token.string ==~ "(?i)Arabia"})?|({Token.string ==~ "South|North"})?{Token.string == "Korea"}|{Token.string ==~ "(?i)Trinidad"}{Token.string ==~ "(?i)and"}{Token.string ==~ "(?i)Tobago"}|
+{Token.string ==~ "(?i)Afghanistan|Africa|Albania|Algeria|Andorra|Angola|Arabia|Argentina|Armenia|Australia|Austria|Bahama|Bahrain|Bangladesh|Belarus|Belgium|Belize|Benin|Bermuda|Bhutan|Bissau|Bosnia|Botswana|Brazil|Britain|Brunei|Bulgaria|Burma|Burundi|Cambodia|Cameroon|Canada|Chad|Chile|China|Colombia|Columbia|Congo|Croatia|Cuba|Cyprus|Czech|Denmark|Djibouti|Dominican|Ecuador|Egypt|Emirates|Eritrea|Estonia|Ethiopia|Fiji|Finland|France|Gabon|Gambia|Germany|Georgia|Ghana|Gibraltar|Greece|Grenada|Guatemala|Guiana|Guinea|Guyana|Haiti|Holland|Honduras|Hungary|Iceland|India|Indonesia|Iran|Iraq|Ireland|Italy|Jamaica|Japan|Kazakhstan|Kenya|Kiribati|Korea|Kosovo|Kuwait|Kyrgyzstan|Lanka|Laos|Latvia|Lebanon|Leone|Libya|Liechtenstein|Lithuania|Luxembourg|Malawi|Malaysia|Maldives|Mali|Malta|Mauritania|Mauritia|Mexico|Micronesia|Moldovia|Mongolia|Morocco|Mozambique|Myanmar|Namibia|Nepal|Netherland|Netherlands|Nicaragua|Niger|Nigeria|Norway|Oman|Pakistan|Palau|Palestine|Panama|Papua|Paraguay|Peru|Philippines|Portugal|Poland|Qatar|Rica|Romania|Russia|Rwanda|Salvador|Scotland|Senegal|Serbia|Sierra|Singapore|Slovakia|Slovenia|Somalia|Spain|Sudan|Suriname|Swaziland|Sweden|Swedish|Switzerland|Syria|Taiwan|Tajikstan|Tajikistan|Tanzania|Thailand|Tibet|Timor|Tonga|Tunisia|Turkey|Turkmenistan|Tuvalua|Uganda|Ukraine?|Uruguay|Uzbekistan|Venezuela|Verde|Vietnam|Wales|Yemen|Zaire|Zambia|Zealand|Zimbabwe|Israel|Herzegovina|England|America"}|({Token.string == "the"})?{Token.string ==~ "(?i)UK"}
+
+//Cape|Jordan
+):label
+-->
+:label.COUNTRY = { CATEGORY = "LOCATION"}
+
+
+Rule: getNationality
+Priority: 50
+({!Token.string ==~ "(?i)speaks?|some"}):noAnn0
+(
+{Token.string ==~ "(?i)Afghan|African-American|Albanian|Algerian|Andorran|Angolan|Antiguans|Argentinean|Argentinian|Armenian|Australian|Austrian|Azerbaijani|Bahamian|Bahraini|Bangladeshi|Barbadian|Barbudans|Batswana|Belarusan|Belarusian|Belgian|Belizean|Beninese|Bhutanese|Bolivian|Bosnian|Botswanan|Brazilian|Bruneian|Bulgarian|Burkinabe|Burkinese|Burmese|Burundian|Cambodian|Cameroonian|Canadian|Chadian|Chilean|Chinese|Colombian|Columbian|Comoran|Congolese|Croatian|Cuban|Cypriot|Czech|Danish|Djibouti|Djiboutian|Dominican|Dutch|East Timorese|Ecuadorean|Ecuadorian|Egyptian|Emirati|Emirian|Equadorian|Eritrean|Estonian|Ethiopian|Fijian|Filipino|Finnish|French|Gabonese|Gambian|Georgian|German|Ghanaian|Greek|Grenadian|Guatemalan|Guinea-Bissauan|Guinean|Guyanese|Haitian|Herzegovinian|Honduran|Hungarian|Icelander|Icelandic|I-Kiribati|Indian|Indonesian|Iranian|Iraqi|Irish|Israeli|Italian|Ivorian|Jamaican|Japanese|Jordanian|Kazakh|Kazakhstani|Khazakhstani|Kenyan|Kittian|Nevisian|Kuwaiti|Kyrgyz|Laotian|Latvian|Lebanese|Liberian|Libyan|Liechtensteiner|Lithuanian|Luxembourger|Macedonian|Madagascan|Malagasy|Malawian|Malaysian|Maldivan|Maldivian|Malian|Maltese|Marshallese|Mauritanian|Mauritian|Mexican|Micronesian|Moldovan|Monacan|Mongolian|Montenegrin|Moroccan|Mosotho|Motswana|Mozambican|Namibian|Nauruan|Nepalese|New Zealander|Nicaraguan|Nigerian|Nigerien|Northern Irish|North Korean|Norwegian|Omani|Pakistani|Palauan|Panamanian|Paraguayan|Peruvian|Philippine|Polish|Portuguese|Qatari|Romanian|Russian|Rwandan|Salvadoran|Salvadorean|Samoan|Scottish|Senegalese|Serb|Serbian|Seychellois|Singaporean|Slovak|Slovakian|Slovene|Slovenian|Solomon Islander|Somali|South African|South Korean|Spanish|Sri Lankan|Sudanese|Surinamer|Surinamese|Swazi|Swedish|Swiss|Syrian|Tadjik|Tadjiki|Taiwanese|Tajikistani|Tajik|Tajiki|Tanzanian|Thai|Tobagonian|Togolese|Tongan|Trinidadian|Tunisian|Turkish|Turkmen|Turkoman|Tuvaluan|Ugandan|Ukrainian|Uruguayan|Uzbek|Uzbeki|Uzbekistani|Vanuatuan|Venezuelan|Vietnamese|Welsh|Yemeni|Yemenite|Yugoslav|Zairean|Zambian|Zimbabwean|English"}
+|
+{Token.string ==~ "Puerto|Costa"}{Token.string == "Rican"}|{Token.string == "Sri"}{Token.string == "Lankan"}|{Token.string == "Cape"}{Token.string == "Verdean"}|{Token.string ==~ "South|Central"}{Token.string == "African"}|({Token.string ==~ "South|North"})?{Token.string == "Korean"}|{Token.string == "Trinidadian"}{Token.string == "Tobagan"}
+
+//San Marinese|Sao Tomean|Papua New Guinean|Western Samoan|Saint Lucian|Sierra Leonean|Sierra Leonian|Equatorial Guinean|British
+
+
+//|French|American
+):label
+({!Token.string ==~ "(?i)city|restaurant|general|hospital|clinic|area|street|road"}):noAnn //remove speaking for recall
+-->
+:label.COUNTRY = {CATEGORY = "LOCATION"}
+
+Rule: getNat
+Priority: 40
+(
+{Token.string ==~ "(?i)Afghan-speaking|Albanian-speaking|Algerian-speaking|Andorran-speaking|Angolan-speaking|Argentinian-speaking|Armenian-speaking|Australian-speaking|Austrian-speaking|Azerbaijani-speaking|Bahamian-speaking|Bahraini-speaking|Bangladeshi-speaking|Barbadian-speaking|Belarusian or Belarusan-speaking|Belgian-speaking|Belizean-speaking|Beninese-speaking|Bhutanese-speaking|Bolivian-speaking|Bosnian-speaking|Botswanan-speaking|Brazilian-speaking|British-speaking|Bruneian-speaking|Bulgarian-speaking|Burkinese-speaking|Burmese-speaking|Burundian-speaking|Cambodian-speaking|Cameroonian-speaking|Canadian-speaking|Cape Verdean-speaking|Chadian-speaking|Chilean-speaking|Chinese-speaking|Colombian-speaking|Congolese-speaking|Croatian-speaking|Cuban-speaking|Cypriot-speaking|Czech-speaking|Danish-speaking|Djiboutian-speaking|Dominican-speaking|Dominican-speaking|Ecuadorean-speaking|English-speaking|Egyptian-speaking|Salvadorean-speaking|Eritrean-speaking|Estonian-speaking|Ethiopian-speaking|Fijian-speaking|Finnish-speaking|Gabonese-speaking|Gambian-speaking|Georgian-speaking|German-speaking|Ghanaian-speaking|Greek-speaking|Grenadian-speaking|Guatemalan-speaking|Guinean-speaking|Guyanese-speaking|Haitian-speaking|Dutch-speaking|Honduran-speaking|Hungarian-speaking|Icelandic-speaking|Indian-speaking|Indonesian-speaking|Iranian-speaking|Iraqi-speaking|Irish-speaking|Italian-speaking|Jamaican-speaking|Japanese-speaking|Jordanian-speaking|Kazakh-speaking|Kenyan-speaking|Kuwaiti-speaking|Laotian-speaking|Latvian-speaking|Lebanese-speaking|Liberian-speaking|Libyan-speaking|Lithuanian-speaking|Macedonian-speaking|Madagascan-speaking|Malawian-speaking|Malaysian-speaking|Maldivian-speaking|Malian-speaking|Maltese-speaking|Mauritanian-speaking|Mauritian-speaking|Mexican-speaking|Moldovan-speaking|Monacan-speaking|Mongolian-speaking|Montenegrin-speaking|Moroccan-speaking|Mozambican-speaking|Namibian-speaking|Nepalese-speaking|Dutch-speaking|Nicaraguan-speaking|Nigerien-speaking|Nigerian-speaking|Norwegian-speaking|Omani-speaking|Pakistani-speaking|Panamanian-speaking|Guinean-speaking|Paraguayan-speaking|Peruvian-speaking|Philippine-speaking|Polish-speaking|Portuguese-speaking|Qatari-speaking|Romanian-speaking|Russian-speaking|Rwandan-speaking|Saudi-speaking|Scottish-speaking|Senegalese-speaking|Serb-speaking|Serbian-speaking|Seychellois-speaking|Sierra Leonian-speaking|Singaporean-speaking|Slovak-speaking|Slovene-speaking|Slovenian-speaking|Somali-speaking|Spanish-speaking|Sri Lankan-speaking|Sudanese-speaking|Surinamese-speaking|Swazi-speaking|Swedish-speaking|Swiss-speaking|Syrian-speaking|Taiwanese-speaking|Tajik-speaking|Tadjik-speaking|Tanzanian-speaking|Thai-speaking|Togolese-speaking|Tobagonian-speaking|Turkish-speaking|Turkoman-speaking|Turkmen-speaking|Tuvaluan-speaking|Ugandan-speaking|Ukrainian-speaking|Emirati-speaking|British-speaking|Uruguayan-speaking|Uzbek-speaking|Vanuatuan-speaking|Venezuelan-speaking|Vietnamese-speaking|Welsh-speaking|Western Samoan-speaking|Yemeni-speaking|Yugoslav-speaking|Zairean-speaking|Zambian-speaking|Zimbabwean-speaking|Equadorian-speaking"}
+):label
+-->
+:label
+{  
+    AnnotationSet matchedAnns = bindings.get("label");  
+    Annotation annotation = matchedAnns.iterator().next();
+ 
+	try{
+   		FeatureMap newFeatures = Factory.newFeatureMap();
+			newFeatures.put("CATEGORY", "LOCATION"); 
+    		outputAS.add(start(annotation), end(annotation)-9, "COUNTRY", newFeatures);
+	   } catch (InvalidOffsetException e) {
+   		throw new LuckyException(e);
+  	}
+  	//outputAS.remove(annotation);
+}  
+
+
+
+
+
+
+
