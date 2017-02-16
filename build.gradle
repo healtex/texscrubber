@@ -9,7 +9,7 @@ repositories {
 
 sourceCompatibility = 1.8
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'healtext.Main'
+    ext.mainClass = 'org.healtext.Main'
 }
 version = '0.1'
 jar {
@@ -25,6 +25,7 @@ dependencies {
     //for fileIO
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
 	//Spring Batch 
-   	compile 'org.springframework.batch:spring-batch-core:3.0.7.RELEASE'
-   	compile 'org.springframework.boot:spring-boot-starter-batch'
+    compile group: 'org.springframework.batch', name: 'spring-batch-core', version: '3.0.7.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-batch', version: '1.5.1.RELEASE'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
     }
