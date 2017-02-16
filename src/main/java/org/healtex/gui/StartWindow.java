@@ -314,7 +314,7 @@ public class StartWindow extends javax.swing.JFrame {
         jButtonCancelBatch.setEnabled(true);
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         RunBatch runBatch = new RunBatch(fileList,
-                jTextFieldOutputDir.getText(),
+                new File(jTextFieldOutputDir.getText()),
                 jProgressBarBatchProgress,
                 jButtonLaunchBatch,
                 jButtonCancelBatch);

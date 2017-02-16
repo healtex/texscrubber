@@ -9,13 +9,14 @@ repositories {
 
 sourceCompatibility = 1.8
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'org.healtext.Main'
+    ext.mainClass = 'org.healtex.Main'
 }
 version = '0.1'
 jar {
     manifest {
         attributes 'Implementation-Title': 'texscrubber',
-                   'Implementation-Version': version
+                   'Implementation-Version': version,
+                    'Main-Class': 'org.healtex.Main'
     }
 }
 

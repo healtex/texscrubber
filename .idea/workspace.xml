@@ -2,43 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbc2fcd-31f8-4c5d-970e-54a7a0167ba0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/texscrubber.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/texscrubber_main.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/texscrubber_test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/logging/JTextAreaAppender.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$RunBatch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/guiHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/org/healtext/Main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/org/healtext/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/texscrubber.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/controller/NamedEntityExtractor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/gui/GuiHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/gui/StartWindow.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/gui/StartWindow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/pipeline/EmailNER.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/pipeline/PassOne.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/pipeline/PreProcess.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/healtex/pipeline/UrlNER.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$1.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$2.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$3.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$4.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$5.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$6.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$7.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$8.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$9.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow.class" afterPath="$PROJECT_DIR$/build/classes/main/org/healtex/gui/StartWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" afterPath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java" />
     </list>
     <ignored path="texscrubber.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -169,8 +135,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            <state relative-caret-position="306">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -179,8 +145,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding>
                 <element signature="e#274#275#0" expanded="true" />
                 <element signature="e#340#341#0" expanded="true" />
@@ -189,13 +155,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartWindow.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="73" column="55" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
+            <state relative-caret-position="181">
+              <caret line="314" column="66" selection-start-line="314" selection-start-column="66" selection-end-line="314" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2276#2365#0" expanded="true" />
                 <element signature="e#4838#4839#0" expanded="true" />
                 <element signature="e#4908#4909#0" expanded="true" />
                 <element signature="e#5806#5807#0" expanded="true" />
@@ -210,10 +177,10 @@
                 <element signature="e#11455#11456#0" expanded="true" />
                 <element signature="e#11724#11725#0" expanded="true" />
                 <element signature="e#11796#11797#0" expanded="true" />
-                <element signature="e#14778#14865#0" expanded="true" />
-                <element signature="e#16264#16265#0" expanded="true" />
-                <element signature="e#16330#16331#0" expanded="true" />
-                <marker date="1487273385320" expanded="false" signature="2241:2271" ph="/unchecked/" />
+                <element signature="e#14788#14875#0" expanded="true" />
+                <element signature="e#16274#16275#0" expanded="true" />
+                <element signature="e#16340#16341#0" expanded="true" />
+                <marker date="1487273844096" expanded="false" signature="2241:2271" ph="/unchecked/" />
               </folding>
             </state>
           </provider>
@@ -229,11 +196,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunBatch.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RunBatch.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+            <state relative-caret-position="323">
+              <caret line="57" column="80" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -652,10 +619,10 @@
         <option value="$PROJECT_DIR$/src/org/healtex/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/healtex/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/healtex/gui/GuiHelper.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/org/healtex/logging/JTextAreaAppender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" />
       </list>
     </option>
   </component>
@@ -689,7 +656,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -705,72 +672,7 @@
     <panes>
       <pane id="Scratches" />
       <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber_main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber_main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.healtex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber_main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.healtex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -797,7 +699,24 @@
         </subPane>
       </pane>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
     </panes>
   </component>
@@ -1421,16 +1340,16 @@
       <workItem from="1487264821916" duration="174000" />
       <workItem from="1487265006620" duration="245000" />
       <workItem from="1487265262515" duration="190000" />
-      <workItem from="1487265464119" duration="7468000" />
+      <workItem from="1487265464119" duration="8168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8668000" />
+    <option name="totallyTimeSpent" value="9368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077313" sideWeight="0.5061995" order="7" side_tool="true" content_ui="tabs" />
@@ -1448,11 +1367,11 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077313" sideWeight="0.49380055" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077313" sideWeight="0.49380055" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21024258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21024258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18436658" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1584,25 +1503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding>
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/logging/JTextAreaAppender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1615,22 +1515,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+        <state relative-caret-position="306">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="73" column="55" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
+        <state relative-caret-position="181">
+          <caret line="314" column="66" selection-start-line="314" selection-start-column="66" selection-end-line="314" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2276#2365#0" expanded="true" />
             <element signature="e#4838#4839#0" expanded="true" />
             <element signature="e#4908#4909#0" expanded="true" />
             <element signature="e#5806#5807#0" expanded="true" />
@@ -1645,10 +1555,20 @@
             <element signature="e#11455#11456#0" expanded="true" />
             <element signature="e#11724#11725#0" expanded="true" />
             <element signature="e#11796#11797#0" expanded="true" />
-            <element signature="e#14778#14865#0" expanded="true" />
-            <element signature="e#16264#16265#0" expanded="true" />
-            <element signature="e#16330#16331#0" expanded="true" />
-            <marker date="1487273385320" expanded="false" signature="2241:2271" ph="/unchecked/" />
+            <element signature="e#14788#14875#0" expanded="true" />
+            <element signature="e#16274#16275#0" expanded="true" />
+            <element signature="e#16340#16341#0" expanded="true" />
+            <marker date="1487273844096" expanded="false" signature="2241:2271" ph="/unchecked/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="57" column="80" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

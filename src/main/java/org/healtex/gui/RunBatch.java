@@ -24,14 +24,14 @@ public class RunBatch extends SwingWorker<Void, String> implements PropertyChang
 
     private Collection<File> filesToProcess;
     private NamedEntityExtractor namedEntityExtractor;
-    private String pathPrefix;
+    private File pathPrefix;
     private JProgressBar jProgressBarBatchProgress;
     private JButton jButtonLaunchBatch;
     private JButton jButtonCancelBatch;
     Logger logger = LoggerFactory.getLogger(RunBatch.class);
 
     public RunBatch(Collection<File> filesToProcess,
-                    String pathPrefix,
+                    File pathPrefix,
                     JProgressBar jProgressBarBatchProgress,
                     JButton jButtonLaunchBatch,
                     JButton jButtonCancelBatch){
@@ -62,7 +62,7 @@ public class RunBatch extends SwingWorker<Void, String> implements PropertyChang
             if(doc!=null) namedEntityExtractor.run(doc);
 
             try {
-                DocumentStaxUtils.writeDocument(doc,new File(pathPrefix+doc.getName()));
+                DocumentStaxUtils.writeDocument(doc,new File(pathPrefix.getCanonicalPath()+File.separator+doc.getName()));
             } catch (XMLStreamException | IOException e) {
                 publish(MessageFormat.format("Failed to save {}", file.getName(), e.getLocalizedMessage()));
             }
