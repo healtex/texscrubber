@@ -1,7 +1,7 @@
 package org.healtex.model;
 
 import java.util.List;
-
+// TODO: Should be removed and replaced by gate.Document
 public class GATEDocument {
     private String annotatedContent;
     private String fileName;

@@ -1,15 +1,15 @@
 package org.healtex.batch.writer;
 
 
+import org.healtex.model.GATEDocument;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ItemWriter;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ItemWriter;
-import org.healtex.model.GATEDocument;
 
 public class DeidentifiedDocumentWriter implements ItemWriter<GATEDocument> {
     private static final Logger LOG = LoggerFactory.getLogger(DeidentifiedDocumentWriter.class);
@@ -27,8 +27,10 @@ public class DeidentifiedDocumentWriter implements ItemWriter<GATEDocument> {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(
                     new File(outputPath + File.separator + doc.getFileName())))) {
                 bw.write(doc.getAnnotatedContent());
+                // TODO: Get patientId from doc and remove related patient dictionary (gazetteer) (if any)
 
             }
+
         }
     }
 
