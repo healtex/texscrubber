@@ -48,7 +48,6 @@ public class BatchConfiguration {
     public MultiResourceItemReader<Document> reader() {
         MultiResourceItemReader<Document> reader = new MultiResourceItemReader<Document>();
 
-        // TODO: change to a user-specific directory
         File folder = new File("workspace/sample-input/");
         List<Resource> resList = new ArrayList<Resource>();
 
@@ -77,14 +76,12 @@ public class BatchConfiguration {
 
     @Bean
     public ItemWriter<GATEDocument> firstPassWriter() {
-        // TODO: change to a user-specific directory
         NamedEntitiesWriter writer = new NamedEntitiesWriter("workspace/dev-test-output");
         return writer;
     }
 
     @Bean
     public ItemWriter<GATEDocument> secondPassWriter() {
-        // TODO: change to a user-specific directory
         DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2");
         return writer;
     }
