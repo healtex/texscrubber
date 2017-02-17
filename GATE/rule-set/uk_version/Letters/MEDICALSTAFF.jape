@@ -1,0 +1,218 @@
+Phase: Dr
+Input: Token Split Lookup
+Options: control = appelt
+
+
+/**
+ * dictionary from christie db
+ **/
+Rule: MdStaffName0
+(  
+ {Lookup.minorType == medicalstaff}  
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "NAME");   
+features.put("RULE", "MdStaffName0");  
+outputAS.add(label.firstNode(), label.lastNode(), "MEDICALSTAFF", features);
+}
+
+
+/**
+ * Dr names with post context identifiers | TP:43
+ */
+Rule: DrName1
+Priority: 100
+(
+({Token.orth=="upperInitial", !Split, !Token.string ==~"(?i)Dr|Mr|Mrs|Ms|Dr|Miss|Prof|Professor"}({Token.string =="."})?)?
+({Token.orth=="upperInitial", !Split, !Token.string ==~"(?i)Dr|Mr|Mrs|Ms|Dr|Miss|Prof|Professor"}({Token.string =="."})?)?
+({Token.orth=="upperInitial", !Split, !Token.string ==~"(?i)Dr|Mr|Mrs|Ms|Dr|Miss|Prof|Professor"}({Token.string =="."})?)?
+{Token.orth=="upperInitial", !Token.string ==~"(?i)Locum"}
+):label
+(({Token.string==","}|{Split}){Token.string ==~"(?i)Locum|Consultant|spr|registrar|nurse|sister|MRCP|MD|ChM"}):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName1"}
+
+/**
+ * Dr names with pre context identifiers
+ */
+Rule: DrName2
+Priority: 100
+({Token.string ==~"(?i)Dr|Prof|Professor|Sister"}({Token.string =="."})?):pre_context
+(
+{Token.orth=="upperInitial", !Token.string==~"(?i)Dr"} 
+(({Token.string ==".", !Split})?{Token.orth=="upperInitial", !Token.string==~"(?i)Manchester|Wilmslow|Withington|He|Growth"}|{Token.orth=="allCaps"}|{Token.orth=="mixedCaps"})? 
+(({Token.string ==".", !Split})?{Token.orth=="upperInitial", !Token.string==~"(?i)Consultant|Tel|Clinical|Wilmslow|Growth|Withington|Manchester|Dr|He"}|({Token.string =="."})?{Token.orth=="allCaps", !Token.string==~"MB|MD|MRCP"})? 
+(({Token.string ==".", !Split})?{Token.orth=="upperInitial", !Token.string==~"(?i)Consultant|Tel|Clinical|Wilmslow|Growth|Withington|Manchester|Dr|He"}|({Token.string =="."})?{Token.orth=="allCaps", !Token.string==~"MB|MD|MRCP"})?
+):label
+-->
+:label.MEDICALSTAFF = {CATEGORY = "NAME", TEXT = :label@string, RULE="DrName2"}
+
+/**
+ * Dr names with post context identifiers 
+ **/
+Rule: DrName3
+Priority: 100
+(
+({Token.orth=="upperInitial", !Split, !Token.string ==~"(?i)Mr|Mrs|Ms|Dr|Miss"}|{Token.orth=="allCaps", !Split, !Token.string ==~"(?i)MD|FRCS"})?
+({Token.orth=="allCaps", !Split, !Token.string ==~"(?i)MD|FRCS"}|{Token.orth=="upperInitial", !Split}){Token.orth=="allCaps"}
+):label
+(
+({Split}|{Token.string==","})
+({Token.string ==~"(?i)Consultant|Registrar|Locum|MD|FRCS|MRCP|SpR|ChM"}|
+{Token.string ==~"(?i)Transplant"}{Token.string ==~"(?i)Coordinator"}|
+{Token.string ==~"(?i)Research|Clinical|Specialist"}{Token.string ==~"(?i)Nurse|Registrar"}|
+{Token.string ==~"(?i)Senior"}{Token.string ==~"(?i)Lecturer"}|
+{Token.string ==~"(?i)Associate"}{Token.string ==~"(?i)Specialist"}|
+{Token.string ==~"(?i)Macmillan"}{Token.string ==~"(?i)Consultant"}|
+{Token.string ==~"(?i)Medical"}{Token.string ==~"(?i)Secretary"})
+):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName3"}
+
+
+
+/**
+ * Dr names with post context identifiers 
+ **/
+Rule: DrName333
+Priority: 100
+(
+({Token.orth=="upperInitial", !Split, !Token.string ==~"(?i)Mr|Mrs|Ms|Dr|Miss"}({Token.string=="."})?)?
+({Token.orth=="upperInitial", !Split}({Token.string=="."})?){Token.orth=="allCaps"}
+):label
+(
+({Split}|{Token.string==","})
+({Token.string ==~"(?i)Consultant|Registrar|Locum|MD|FRCS|MRCP|SpR|ChM|Senior|Professor"}|
+{Token.string ==~"(?i)Transplant"}{Token.string ==~"(?i)Coordinator"}|
+{Token.string ==~"(?i)Research|Clinical|Specialist"}{Token.string ==~"(?i)Nurse|Registrar"}|
+{Token.string ==~"(?i)Senior"}{Token.string ==~"(?i)Lecturer"}|
+{Token.string ==~"(?i)Associate"}{Token.string ==~"(?i)Specialist"}|
+{Token.string ==~"(?i)Macmillan"}{Token.string ==~"(?i)Consultant"}|
+{Token.string ==~"(?i)Medical"}{Token.string ==~"(?i)Secretary"})
+):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName3"}
+
+
+Rule: DrName33
+Priority: 100
+({Token.string ==~"(?i)Mr|Mrs|Ms|Dr|Miss|Secretary|Specialist"}({Token.string ==~":|\\."})?):pre_context
+(
+({Token.orth=="upperInitial", !Token.string ==~"Mr|Mrs|Dr|Miss|Ms"})?
+{Token.orth=="upperInitial", !Token.string ==~"Mr|Mrs|Dr|Miss|Ms"}({Token.orth=="upperInitial"})
+):label
+(
+({Token.string==","})?{Token.string ==~"MS|MD|FRCS|MRCP|SpR|ChM|MCh"}
+):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName33"}
+
+/**
+ * Dr names with pre context identifiers 
+ **/
+Rule: DrName4
+Priority: 100
+({Token.string ==~"(?i)Dr|Prof|Professor"}({Token.string =="."})?):pre_context
+(
+({Token.orth=="allCaps"}|{Token.orth=="upperInitial", !Token.string ==~"(?i)Dr|Mr|Mrs|Ms|Dr|Miss|Prof|Professor"})
+({Token.orth=="upperInitial", !Token.string==~ "(?i)Manchester|Growth"})?
+({Token.orth=="allCaps", !Token.string==~"MRCP"})? //remove ? for -16 OVERLAP
+):label
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName4"}
+
+
+/**
+ * Dr names with pre context identifiers 
+ **/
+Rule: DrName5
+Priority: 100
+({Token.string ==~"(?i)Secretary"}{Token.string =="to"}{Token.string ==~"(?i)Mr|Mrs|Miss"}):pre_context
+(
+({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?
+):label
+(({Token.string ==~"(?i)and|\\&"}{Token.string ==~"(?i)Mr|Mrs|Miss"})?):mid_context
+(
+(({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?)?
+):label2
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName5a"},
+:label2.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName5b"}
+
+
+/**
+ * Dr names with pre context identifiers 
+ **/
+Rule: DrName6
+Priority: 100
+({Token.string ==~"(?i)Drs"}):pre_context
+(
+({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?
+):label
+({Token.string ==~"(?i)and|\\&"}):mid_context
+(
+(({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?)?
+):label2
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName6a"},
+:label2.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName6b"}
+
+
+/**
+ * Dr names with pre context identifiers 
+ **/
+Rule: DrName7
+Priority: 100
+(({Token.string ==~"(?i)cc"}{Token.string =="."})?{Token.string ==~"(?i)Mr|Mrs|Miss"}):pre_context
+(
+({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?
+):label
+({Token.string ==~"(?i)Secretary"}{Token.string =="to"}):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName7"}
+
+
+/**
+ * Dr names with pre context identifiers 
+ **/
+Rule: DrName8
+Priority: 100
+(({Token.string ==~"(?i)cc"}{Token.string =="."}){Token.string ==~"(?i)Mr|Mrs|Miss"}):pre_context
+(
+({Token.orth=="upperInitial"})
+({Token.orth=="upperInitial"})?
+):label
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName7"}
+
+
+Rule: DrName9
+Priority: 70
+(
+({Token.string =="due"}{Token.string =="to"}{Token.string =="see"}|{Token.string =="surgery"}{Token.string =="by"})
+{Token.string ==~"(?i)Mr|Mrs|Miss"}):pre_context
+(
+{Token.orth=="upperInitial"} ({Token.orth=="upperInitial", !Split})?
+):label
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="DrName9"}
+
+
+Rule: DrName10
+Priority: 100
+({Token.string =="Dear"}):pre_context
+(
+{Token.orth=="upperInitial"}
+):label
+({Split}):post_context
+-->
+:label.MEDICALSTAFF = { CATEGORY = "NAME", TEXT = :label@string, RULE="NAME"}

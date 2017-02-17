@@ -29,7 +29,7 @@ import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.batch.writer.DeidentifiedDocumentWriter;
 import org.healtex.batch.writer.NamedEntitiesWriter;
 import org.healtex.model.Document;
-import org.healtex.model.GATEDocument;
+import org.healtex.model.AnnotatedDocument;
 
 @Configuration
 @EnableBatchProcessing
@@ -69,19 +69,20 @@ public class BatchConfiguration {
         return new FirstPassItemProcessor();
     }
 
+    // TODO: All hardcoded paths need to be read from settings?
     @Bean
     public SecondPassItemProcessor processor2() {
-        return new SecondPassItemProcessor();
+        return new SecondPassItemProcessor("workspace/dev-test-output");
     }
 
     @Bean
-    public ItemWriter<GATEDocument> firstPassWriter() {
+    public ItemWriter<AnnotatedDocument> firstPassWriter() {
         NamedEntitiesWriter writer = new NamedEntitiesWriter("workspace/dev-test-output");
         return writer;
     }
 
     @Bean
-    public ItemWriter<GATEDocument> secondPassWriter() {
+    public ItemWriter<AnnotatedDocument> secondPassWriter() {
         DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2", "workspace/dev-test-output");
         return writer;
     }
@@ -101,7 +102,7 @@ public class BatchConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .<Document, GATEDocument> chunk(10)
+                .<Document, AnnotatedDocument> chunk(10)
                 .reader(reader())
                 .processor(processor1())
                 .writer(firstPassWriter())
@@ -112,7 +113,7 @@ public class BatchConfiguration {
     @Bean
     public Step step2() {
         return stepBuilderFactory.get("step2")
-                .<Document, GATEDocument> chunk(10)
+                .<Document, AnnotatedDocument> chunk(10)
                 .reader(reader())
                 .processor(processor2())
                 .writer(secondPassWriter())

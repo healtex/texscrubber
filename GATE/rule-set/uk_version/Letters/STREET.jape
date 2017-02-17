@@ -1,0 +1,62 @@
+Phase: Street
+Input: Token Split
+Options: control = appelt
+
+Macro: POSTNEG
+(
+{!Token.string ==~ "(?i)Hospital|Medical|Clinic|Surgery|Health"}
+)
+
+Rule: street1
+Priority: 100
+(
+({Token.string ==~ "[0-9]{1,3}"}{Token.string==~"/|-"})?
+{Token.string ==~ "[0-9]{1,3}"} ({Token.string ==~ ",|\\."})? //only 5 examples with trailing ","
+({Token.kind=="word"})[1,2]
+({Token.string ==~ "(?i)street|road|avenue|drive|crescent|view|court|close|lane|way|grove|dedwydd|rd|ln|ave"}) 
+({Token.string ==~ "(?i)south|sout|west|east|north"})?
+):label
+-->
+:label.STREET = { CATEGORY = "LOCATION"}
+
+/**
+ * Add: Court
+ */
+Rule: street2
+Priority: 99
+(
+({Token.string==~"(?i)Great(er)?|Upper|Lower|South|North|East|West"})?
+({Token.orth=="upperInitial"})
+{Token.string ==~ "[Rr]oad|[Ll]ane|[Dd]rive|[Ss]treet|[Rr]d|[Aa]venue|Ave|Close|Way|Grove"}
+({Token.string ==~ "(?i)south|sout|west|east|north"})?
+):label
+(POSTNEG):post_negative_context
+-->
+:label.STREET = { CATEGORY = "LOCATION"}
+
+Rule: common_errors
+(
+{Token.string ==~ "(?)WilmslowRoad|OxfordRoad"}
+):label
+-->
+:label.STREET = { CATEGORY = "LOCATION"}
+
+
+/**
+* Add: Unit 3a
+*/
+Rule: flatOrUnit1
+(
+{Token.string ==~ "(?i)Flat"}{Token.string ==~ "[0-9]{1,2}"}|
+{Token.string ==~ "(?i)Unit"}{Token.string ==~ "[0-9]{1,2}"}{Token.string ==~ "[A-Za-z]"}
+):label
+-->
+:label.STREET = { CATEGORY = "LOCATION"}
+
+
+/** Common FN: STREETs that do not include cues 
+**/
+
+
+
+

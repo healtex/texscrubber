@@ -1,0 +1,16 @@
+Phase: Age
+Input: Token
+Options: control = appelt
+
+Rule: age1
+Priority: 100
+(
+{Token.string ==~ "[0-9]{1,2}"}
+):label
+(
+({Token.string =~ "-"})?
+{Token.string =~ "(?i)year"}
+({Token.string ==~ "(?i)old"}|{Token.string ==~ "(?i)of"}{Token.string ==~ "(?i)age"})
+):post_context
+-->
+:label.AGE = { CATEGORY = "AGE"}

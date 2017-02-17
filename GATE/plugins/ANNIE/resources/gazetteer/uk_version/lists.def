@@ -1,0 +1,7 @@
+town.lst:location:city
+county.lst:location:county
+hospitals.lst:location:hospital
+hospitals.db.lst:location:hospital1
+gps.lst:location:hospital
+age.lst:age:age
+consultant.name.lst:name:medicalstaff

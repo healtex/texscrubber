@@ -1,0 +1,17 @@
+Phase: unionPassTwo
+Input: PATIENT
+Options: control = all
+
+Rule: unionPassTwo
+(  
+{PATIENT}
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "ALL");
+features.put("RULE", "unionPassTwo");  
+outputAS.add(label.firstNode(), label.lastNode(), "DEIDED", features);  
+}
