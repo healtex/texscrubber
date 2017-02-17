@@ -111,11 +111,16 @@ public class FlatFileSingleItemReader extends ItemStreamSupport implements
 
             try {
                 Document doc = new Document();
+                String filename = resource.getFilename();
                 doc.setContent(sb.toString());
-                doc.setFileName(resource.getFilename());
+                doc.setFileName(filename);
                 doc.setPerPersonDocumentId("placeholder");
                 doc.setPersonId("placeholder");
-                // TODO: parsing of person ID from file name
+                if (filename.contains("-")) {
+                    String basename = filename.substring(0, filename.lastIndexOf("."));
+                    doc.setPerPersonDocumentId(basename.split("-")[1]);
+                    doc.setPersonId(basename.split("-")[0]);
+                }
                 return doc;
             }
             catch (Exception ex) {
