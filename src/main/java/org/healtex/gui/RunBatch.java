@@ -59,13 +59,16 @@ public class RunBatch extends SwingWorker<Void, String> implements PropertyChang
                 publish(MessageFormat.format("Failed to load {}", file.getName(), e.getLocalizedMessage()));
             }
 
-            if(doc!=null) namedEntityExtractor.run(doc);
-
-            try {
-                DocumentStaxUtils.writeDocument(doc,new File(pathPrefix.getCanonicalPath()+File.separator+doc.getName()));
-            } catch (XMLStreamException | IOException e) {
-                publish(MessageFormat.format("Failed to save {}", file.getName(), e.getLocalizedMessage()));
+            if(doc!=null) {
+                namedEntityExtractor.run(doc);
+                try {
+                    DocumentStaxUtils.writeDocument(doc, new File(pathPrefix.getCanonicalPath() + File.separator + doc.getName()));
+                } catch (XMLStreamException | IOException e) {
+                    publish(MessageFormat.format("Failed to save {}", file.getName(), e.getLocalizedMessage()));
+                }
+                gate.Factory.deleteResource(doc);
             }
+
             progress += 1;
             setProgress(progress);
         }
