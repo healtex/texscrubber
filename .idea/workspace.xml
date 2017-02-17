@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbc2fcd-31f8-4c5d-970e-54a7a0167ba0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="texscrubber.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,10 +145,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding>
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,28 +153,10 @@
       <file leaf-file-name="StartWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
+            <state relative-caret-position="1394">
               <caret line="314" column="66" selection-start-line="314" selection-start-column="66" selection-end-line="314" selection-end-column="66" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2276#2365#0" expanded="true" />
-                <element signature="e#4838#4839#0" expanded="true" />
-                <element signature="e#4908#4909#0" expanded="true" />
-                <element signature="e#5806#5807#0" expanded="true" />
-                <element signature="e#5877#5878#0" expanded="true" />
-                <element signature="e#6960#6961#0" expanded="true" />
-                <element signature="e#7022#7023#0" expanded="true" />
-                <element signature="e#7921#7922#0" expanded="true" />
-                <element signature="e#7991#7992#0" expanded="true" />
-                <element signature="e#11053#11054#0" expanded="true" />
-                <element signature="e#11122#11123#0" expanded="true" />
-                <element signature="e#11385#11386#0" expanded="true" />
-                <element signature="e#11455#11456#0" expanded="true" />
-                <element signature="e#11724#11725#0" expanded="true" />
-                <element signature="e#11796#11797#0" expanded="true" />
-                <element signature="e#14788#14875#0" expanded="true" />
-                <element signature="e#16274#16275#0" expanded="true" />
-                <element signature="e#16340#16341#0" expanded="true" />
+                <element signature="e#0#17899#0" expanded="false" />
                 <marker date="1487273844096" expanded="false" signature="2241:2271" ph="/unchecked/" />
               </folding>
             </state>
@@ -189,9 +166,118 @@
       <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
         <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
+            <state relative-caret-position="23137">
               <caret line="1441" column="16" selection-start-line="1441" selection-start-column="16" selection-end-line="1441" selection-end-column="16" />
-              <folding />
+              <folding>
+                <element signature="e#0#153556#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#9063#9071#0" expanded="false" />
+                <element signature="e#9333#9356#0" expanded="false" />
+                <element signature="e#14537#14538#0" expanded="false" />
+                <element signature="e#14561#14562#0" expanded="false" />
+                <element signature="e#25882#25889#0" expanded="false" />
+                <element signature="e#30713#30714#0" expanded="false" />
+                <element signature="e#30745#30746#0" expanded="false" />
+                <element signature="e#31436#31437#0" expanded="false" />
+                <element signature="e#31480#31481#0" expanded="false" />
+                <element signature="e#31876#31877#0" expanded="false" />
+                <element signature="e#31915#31916#0" expanded="false" />
+                <element signature="e#32306#32307#0" expanded="false" />
+                <element signature="e#32342#32343#0" expanded="false" />
+                <element signature="e#35456#35457#0" expanded="false" />
+                <element signature="e#35491#35492#0" expanded="false" />
+                <element signature="e#40240#40241#0" expanded="false" />
+                <element signature="e#40267#40268#0" expanded="false" />
+                <element signature="e#45982#45983#0" expanded="false" />
+                <element signature="e#46020#46021#0" expanded="false" />
+                <element signature="e#47985#47986#0" expanded="false" />
+                <element signature="e#48022#48023#0" expanded="false" />
+                <element signature="e#48775#48776#0" expanded="false" />
+                <element signature="e#48825#48826#0" expanded="false" />
+                <element signature="e#49555#49556#0" expanded="false" />
+                <element signature="e#49591#49592#0" expanded="false" />
+                <element signature="e#52127#52128#0" expanded="false" />
+                <element signature="e#52173#52174#0" expanded="false" />
+                <element signature="e#52216#52217#0" expanded="false" />
+                <element signature="e#52253#52254#0" expanded="false" />
+                <element signature="e#52413#52414#0" expanded="false" />
+                <element signature="e#52466#52467#0" expanded="false" />
+                <element signature="e#53559#53560#0" expanded="false" />
+                <element signature="e#53602#53603#0" expanded="false" />
+                <element signature="e#53962#53963#0" expanded="false" />
+                <element signature="e#53997#53998#0" expanded="false" />
+                <element signature="e#54328#54336#0" expanded="false" />
+                <element signature="e#54584#54592#0" expanded="false" />
+                <element signature="e#56605#56606#0" expanded="false" />
+                <element signature="e#56666#56667#0" expanded="false" />
+                <element signature="e#60677#60678#0" expanded="false" />
+                <element signature="e#60718#60719#0" expanded="false" />
+                <element signature="e#61156#61164#0" expanded="false" />
+                <element signature="e#66603#66604#0" expanded="false" />
+                <element signature="e#66660#66661#0" expanded="false" />
+                <element signature="e#82437#82438#0" expanded="false" />
+                <element signature="e#82512#82513#0" expanded="false" />
+                <element signature="e#82791#82792#0" expanded="false" />
+                <element signature="e#82825#82826#0" expanded="false" />
+                <element signature="e#88867#88868#0" expanded="false" />
+                <element signature="e#88894#88895#0" expanded="false" />
+                <element signature="e#89190#89191#0" expanded="false" />
+                <element signature="e#89217#89218#0" expanded="false" />
+                <element signature="e#92022#92023#0" expanded="false" />
+                <element signature="e#92065#92066#0" expanded="false" />
+                <element signature="e#95740#95741#0" expanded="false" />
+                <element signature="e#95796#95797#0" expanded="false" />
+                <element signature="e#96268#96269#0" expanded="false" />
+                <element signature="e#96307#96308#0" expanded="false" />
+                <element signature="e#100487#100488#0" expanded="false" />
+                <element signature="e#100514#100515#0" expanded="false" />
+                <element signature="e#101250#101251#0" expanded="false" />
+                <element signature="e#101280#101281#0" expanded="false" />
+                <element signature="e#101309#101310#0" expanded="false" />
+                <element signature="e#101341#101342#0" expanded="false" />
+                <element signature="e#101869#101870#0" expanded="false" />
+                <element signature="e#101938#101939#0" expanded="false" />
+                <element signature="e#103786#103787#0" expanded="false" />
+                <element signature="e#103844#103845#0" expanded="false" />
+                <element signature="e#114245#114246#0" expanded="false" />
+                <element signature="e#114297#114298#0" expanded="false" />
+                <element signature="e#122201#122202#0" expanded="false" />
+                <element signature="e#122255#122256#0" expanded="false" />
+                <element signature="e#123785#123786#0" expanded="false" />
+                <element signature="e#123833#123834#0" expanded="false" />
+                <element signature="e#123878#123879#0" expanded="false" />
+                <element signature="e#123923#123924#0" expanded="false" />
+                <element signature="e#127638#127639#0" expanded="false" />
+                <element signature="e#127679#127680#0" expanded="false" />
+                <element signature="e#129730#129731#0" expanded="false" />
+                <element signature="e#129784#129785#0" expanded="false" />
+                <element signature="e#130591#130592#0" expanded="false" />
+                <element signature="e#130621#130622#0" expanded="false" />
+                <element signature="e#138527#138528#0" expanded="false" />
+                <element signature="e#138571#138572#0" expanded="false" />
+                <element signature="e#147232#147233#0" expanded="false" />
+                <element signature="e#147259#147260#0" expanded="false" />
+                <element signature="e#147940#147941#0" expanded="false" />
+                <element signature="e#147978#147979#0" expanded="false" />
+                <element signature="e#150305#150306#0" expanded="false" />
+                <element signature="e#150358#150359#0" expanded="false" />
+                <element signature="e#150425#150426#0" expanded="false" />
+                <element signature="e#150483#150484#0" expanded="false" />
+                <element signature="e#150534#150535#0" expanded="false" />
+                <element signature="e#150590#150591#0" expanded="false" />
+                <element signature="e#150653#150654#0" expanded="false" />
+                <element signature="e#150707#150708#0" expanded="false" />
+                <element signature="e#151149#151150#0" expanded="false" />
+                <element signature="e#151202#151203#0" expanded="false" />
+                <element signature="e#152622#152623#0" expanded="false" />
+                <element signature="e#152685#152686#0" expanded="false" />
+                <element signature="e#152744#152745#0" expanded="false" />
+                <element signature="e#152801#152802#0" expanded="false" />
+                <element signature="e#152858#152859#0" expanded="false" />
+                <element signature="e#152915#152916#0" expanded="false" />
+                <element signature="e#152996#152997#0" expanded="false" />
+                <element signature="e#153065#153066#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,8 +285,8 @@
       <file leaf-file-name="RunBatch.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="57" column="80" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
+            <state relative-caret-position="-170">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -213,11 +299,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -225,9 +307,11 @@
       <file leaf-file-name="NamedEntityExtractor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/controller/NamedEntityExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="170">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,10 +319,10 @@
       <file leaf-file-name="GuiHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/GuiHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="187">
               <caret line="21" column="115" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#775#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -641,9 +725,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1985" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -656,7 +740,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -670,8 +754,76 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber_main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber_main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.healtex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texscrubber_main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.healtex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
         <subPane />
       </pane>
       <pane id="Scope">
@@ -694,26 +846,6 @@
             <PATH_ELEMENT USER_OBJECT="texscrubber_main">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="texscrubber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1340,48 +1472,57 @@
       <workItem from="1487264821916" duration="174000" />
       <workItem from="1487265006620" duration="245000" />
       <workItem from="1487265262515" duration="190000" />
-      <workItem from="1487265464119" duration="8168000" />
+      <workItem from="1487265464119" duration="8255000" />
+      <workItem from="1487322009786" duration="1810000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed bug where gate docs were not deleted after each execution">
+      <created>1487322414364</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1487322414364</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9368000" />
+    <option name="totallyTimeSpent" value="11265000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077313" sideWeight="0.5061995" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21024258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18436658" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29501525" sideWeight="0.49595687" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28077313" sideWeight="0.49380055" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21024258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18436658" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29501525" sideWeight="0.49595687" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28077313" sideWeight="0.49380055" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1395,6 +1536,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed bug where gate docs were not deleted after each execution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where gate docs were not deleted after each execution" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -1406,7 +1551,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java</url>
-          <line>79</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -1422,6 +1567,33 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="314" column="66" selection-start-line="314" selection-start-column="66" selection-end-line="314" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#17899#0" expanded="false" />
+            <marker date="1487273844096" expanded="false" signature="2241:2271" ph="/unchecked/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding />
@@ -1432,10 +1604,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,10 +1620,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,44 +1643,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/healtex/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/org/healtex/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/controller/NamedEntityExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/GuiHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="115" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="1441" column="16" selection-start-line="1441" selection-start-column="16" selection-end-line="1441" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/logging/JTextAreaAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1527,48 +1655,172 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/StartWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="1394">
           <caret line="314" column="66" selection-start-line="314" selection-start-column="66" selection-end-line="314" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2276#2365#0" expanded="true" />
-            <element signature="e#4838#4839#0" expanded="true" />
-            <element signature="e#4908#4909#0" expanded="true" />
-            <element signature="e#5806#5807#0" expanded="true" />
-            <element signature="e#5877#5878#0" expanded="true" />
-            <element signature="e#6960#6961#0" expanded="true" />
-            <element signature="e#7022#7023#0" expanded="true" />
-            <element signature="e#7921#7922#0" expanded="true" />
-            <element signature="e#7991#7992#0" expanded="true" />
-            <element signature="e#11053#11054#0" expanded="true" />
-            <element signature="e#11122#11123#0" expanded="true" />
-            <element signature="e#11385#11386#0" expanded="true" />
-            <element signature="e#11455#11456#0" expanded="true" />
-            <element signature="e#11724#11725#0" expanded="true" />
-            <element signature="e#11796#11797#0" expanded="true" />
-            <element signature="e#14788#14875#0" expanded="true" />
-            <element signature="e#16274#16275#0" expanded="true" />
-            <element signature="e#16340#16341#0" expanded="true" />
+            <element signature="e#0#17899#0" expanded="false" />
             <marker date="1487273844096" expanded="false" signature="2241:2271" ph="/unchecked/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23137">
+          <caret line="1441" column="16" selection-start-line="1441" selection-start-column="16" selection-end-line="1441" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#153556#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#9063#9071#0" expanded="false" />
+            <element signature="e#9333#9356#0" expanded="false" />
+            <element signature="e#14537#14538#0" expanded="false" />
+            <element signature="e#14561#14562#0" expanded="false" />
+            <element signature="e#25882#25889#0" expanded="false" />
+            <element signature="e#30713#30714#0" expanded="false" />
+            <element signature="e#30745#30746#0" expanded="false" />
+            <element signature="e#31436#31437#0" expanded="false" />
+            <element signature="e#31480#31481#0" expanded="false" />
+            <element signature="e#31876#31877#0" expanded="false" />
+            <element signature="e#31915#31916#0" expanded="false" />
+            <element signature="e#32306#32307#0" expanded="false" />
+            <element signature="e#32342#32343#0" expanded="false" />
+            <element signature="e#35456#35457#0" expanded="false" />
+            <element signature="e#35491#35492#0" expanded="false" />
+            <element signature="e#40240#40241#0" expanded="false" />
+            <element signature="e#40267#40268#0" expanded="false" />
+            <element signature="e#45982#45983#0" expanded="false" />
+            <element signature="e#46020#46021#0" expanded="false" />
+            <element signature="e#47985#47986#0" expanded="false" />
+            <element signature="e#48022#48023#0" expanded="false" />
+            <element signature="e#48775#48776#0" expanded="false" />
+            <element signature="e#48825#48826#0" expanded="false" />
+            <element signature="e#49555#49556#0" expanded="false" />
+            <element signature="e#49591#49592#0" expanded="false" />
+            <element signature="e#52127#52128#0" expanded="false" />
+            <element signature="e#52173#52174#0" expanded="false" />
+            <element signature="e#52216#52217#0" expanded="false" />
+            <element signature="e#52253#52254#0" expanded="false" />
+            <element signature="e#52413#52414#0" expanded="false" />
+            <element signature="e#52466#52467#0" expanded="false" />
+            <element signature="e#53559#53560#0" expanded="false" />
+            <element signature="e#53602#53603#0" expanded="false" />
+            <element signature="e#53962#53963#0" expanded="false" />
+            <element signature="e#53997#53998#0" expanded="false" />
+            <element signature="e#54328#54336#0" expanded="false" />
+            <element signature="e#54584#54592#0" expanded="false" />
+            <element signature="e#56605#56606#0" expanded="false" />
+            <element signature="e#56666#56667#0" expanded="false" />
+            <element signature="e#60677#60678#0" expanded="false" />
+            <element signature="e#60718#60719#0" expanded="false" />
+            <element signature="e#61156#61164#0" expanded="false" />
+            <element signature="e#66603#66604#0" expanded="false" />
+            <element signature="e#66660#66661#0" expanded="false" />
+            <element signature="e#82437#82438#0" expanded="false" />
+            <element signature="e#82512#82513#0" expanded="false" />
+            <element signature="e#82791#82792#0" expanded="false" />
+            <element signature="e#82825#82826#0" expanded="false" />
+            <element signature="e#88867#88868#0" expanded="false" />
+            <element signature="e#88894#88895#0" expanded="false" />
+            <element signature="e#89190#89191#0" expanded="false" />
+            <element signature="e#89217#89218#0" expanded="false" />
+            <element signature="e#92022#92023#0" expanded="false" />
+            <element signature="e#92065#92066#0" expanded="false" />
+            <element signature="e#95740#95741#0" expanded="false" />
+            <element signature="e#95796#95797#0" expanded="false" />
+            <element signature="e#96268#96269#0" expanded="false" />
+            <element signature="e#96307#96308#0" expanded="false" />
+            <element signature="e#100487#100488#0" expanded="false" />
+            <element signature="e#100514#100515#0" expanded="false" />
+            <element signature="e#101250#101251#0" expanded="false" />
+            <element signature="e#101280#101281#0" expanded="false" />
+            <element signature="e#101309#101310#0" expanded="false" />
+            <element signature="e#101341#101342#0" expanded="false" />
+            <element signature="e#101869#101870#0" expanded="false" />
+            <element signature="e#101938#101939#0" expanded="false" />
+            <element signature="e#103786#103787#0" expanded="false" />
+            <element signature="e#103844#103845#0" expanded="false" />
+            <element signature="e#114245#114246#0" expanded="false" />
+            <element signature="e#114297#114298#0" expanded="false" />
+            <element signature="e#122201#122202#0" expanded="false" />
+            <element signature="e#122255#122256#0" expanded="false" />
+            <element signature="e#123785#123786#0" expanded="false" />
+            <element signature="e#123833#123834#0" expanded="false" />
+            <element signature="e#123878#123879#0" expanded="false" />
+            <element signature="e#123923#123924#0" expanded="false" />
+            <element signature="e#127638#127639#0" expanded="false" />
+            <element signature="e#127679#127680#0" expanded="false" />
+            <element signature="e#129730#129731#0" expanded="false" />
+            <element signature="e#129784#129785#0" expanded="false" />
+            <element signature="e#130591#130592#0" expanded="false" />
+            <element signature="e#130621#130622#0" expanded="false" />
+            <element signature="e#138527#138528#0" expanded="false" />
+            <element signature="e#138571#138572#0" expanded="false" />
+            <element signature="e#147232#147233#0" expanded="false" />
+            <element signature="e#147259#147260#0" expanded="false" />
+            <element signature="e#147940#147941#0" expanded="false" />
+            <element signature="e#147978#147979#0" expanded="false" />
+            <element signature="e#150305#150306#0" expanded="false" />
+            <element signature="e#150358#150359#0" expanded="false" />
+            <element signature="e#150425#150426#0" expanded="false" />
+            <element signature="e#150483#150484#0" expanded="false" />
+            <element signature="e#150534#150535#0" expanded="false" />
+            <element signature="e#150590#150591#0" expanded="false" />
+            <element signature="e#150653#150654#0" expanded="false" />
+            <element signature="e#150707#150708#0" expanded="false" />
+            <element signature="e#151149#151150#0" expanded="false" />
+            <element signature="e#151202#151203#0" expanded="false" />
+            <element signature="e#152622#152623#0" expanded="false" />
+            <element signature="e#152685#152686#0" expanded="false" />
+            <element signature="e#152744#152745#0" expanded="false" />
+            <element signature="e#152801#152802#0" expanded="false" />
+            <element signature="e#152858#152859#0" expanded="false" />
+            <element signature="e#152915#152916#0" expanded="false" />
+            <element signature="e#152996#152997#0" expanded="false" />
+            <element signature="e#153065#153066#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/RunBatch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="57" column="80" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
+        <state relative-caret-position="-170">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/logging/JTextAreaAppender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/controller/NamedEntityExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/healtex/gui/GuiHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="115" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
+          <folding>
+            <element signature="e#0#775#0" expanded="false" />
           </folding>
         </state>
       </provider>
