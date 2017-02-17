@@ -18,6 +18,7 @@ public class FirstPassItemProcessor implements ItemProcessor<Document, GATEDocum
     public GATEDocument process(final Document doc) throws Exception {
         GATEDocument gateDoc = new GATEDocument();
         List<String> namedEntities = new ArrayList<String>();
+        
         namedEntities.add("neplaceholder1");
         namedEntities.add("neplaceholder2");
         gateDoc.setNamedEntities(namedEntities);

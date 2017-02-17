@@ -15,23 +15,30 @@ public class DeidentifiedDocumentWriter implements ItemWriter<GATEDocument> {
     private static final Logger LOG = LoggerFactory.getLogger(DeidentifiedDocumentWriter.class);
 
     private String outputPath;
+    private String gazetteersPath;
 
-    public DeidentifiedDocumentWriter(String outputPath) {
+    public DeidentifiedDocumentWriter(String outputPath, String gazetteersPath) {
         this.outputPath = outputPath;
+        this.gazetteersPath = gazetteersPath;
     }
 
     @Override
     public final void write(List<? extends GATEDocument> documents) throws Exception {
 
+        // Write results to documents
         for (GATEDocument doc : documents) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(
                     new File(outputPath + File.separator + doc.getFileName())))) {
                 bw.write(doc.getAnnotatedContent());
-                // TODO: Get patientId from doc and remove related patient dictionary (gazetteer) (if any)
-
             }
-
         }
+
+        // Remove all patients gazetteers
+        for (GATEDocument doc : documents) {
+            File f = new File(gazetteersPath + File.separator + doc.getPersonId() + ".lst");
+            f.delete();
+        }
+
     }
 
 }

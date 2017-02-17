@@ -1,17 +1,19 @@
 package org.healtex.model;
-
 import java.util.List;
+
 // TODO: Should be removed and replaced by gate.Document
-public class GATEDocument {
+public class GATEDocument  {
     private String annotatedContent;
     private String fileName;
     private String personId;
     private String perPersonDocumentId;
     private List<String> namedEntities;
+    private gate.Document gateDoc;
 
     public GATEDocument() {
 
     }
+
 
     public void setAnnotatedContent(String annotatedContent) {
         this.annotatedContent = annotatedContent;
@@ -32,6 +34,7 @@ public class GATEDocument {
     public void setPersonId(String personId) {
         this.personId = personId;
     }
+
 
     public String getPersonId() {
         return personId;

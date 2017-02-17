@@ -82,7 +82,7 @@ public class BatchConfiguration {
 
     @Bean
     public ItemWriter<GATEDocument> secondPassWriter() {
-        DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2");
+        DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2", "workspace/dev-test-output");
         return writer;
     }
     // end::readerwriterprocessor[]
