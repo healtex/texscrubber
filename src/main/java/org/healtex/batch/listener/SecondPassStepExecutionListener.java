@@ -1,7 +1,7 @@
 package org.healtex.batch.listener;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +25,12 @@ public class SecondPassStepExecutionListener implements StepExecutionListener {
         for (StepExecution se : ses) {
             if (se.getStepName().equals("step1")) {
                 ExecutionContext ec = se.getExecutionContext();
-                // TODO: do something with (ArrayList<String>) ec.get("FAILED_LIST");
+                Object storedContext = ec.get("SKIPPED_FILE_NAMES");
+                if (storedContext != null) {
+                    HashSet<String> failedNames = (HashSet<String>) storedContext;
+                    log.info("Obtained skipped file names: {}", storedContext.toString());
+                    // TODO this still seems an overkill.. leave it here for now.
+                }
             }
         }
     }
