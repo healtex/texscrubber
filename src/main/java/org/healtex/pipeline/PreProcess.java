@@ -34,8 +34,6 @@ public class PreProcess {
 	private static void initGate(){
 		Logger.getRootLogger().setLevel(Level.OFF);
 		
-		
-		Out.prln("\n ChristieDEID (UK) v0.1, Copyright (C) 2016 The Christie NHS FT");
 		Out.prln("\n.Initialising pipeline ...");
 		
 		/*

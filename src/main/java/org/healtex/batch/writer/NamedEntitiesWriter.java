@@ -29,12 +29,8 @@ public class NamedEntitiesWriter implements ItemWriter<AnnotatedDocument> {
         for (AnnotatedDocument doc : documents) {
             personIds.add(doc.getPersonId());
         }
-        for (String personId : personIds) {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(
-                    new File(outputPath + File.separator + personId + ".lst")))) {
-                bw.write("");
-            }
-        }
+
+        // TODO: Create sets of NE per person per CHUNK
         // Append to person gazetteers
         for (AnnotatedDocument doc : documents) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(
@@ -44,9 +40,15 @@ public class NamedEntitiesWriter implements ItemWriter<AnnotatedDocument> {
                 }
             }
         }
+
+        // TODO: Check whether the file is already exist, then skip
+
         for (String personId : personIds) {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(
-                    new File(outputPath + File.separator + personId + ".def")))) {
+            File f = new File(outputPath + File.separator + personId + ".def");
+            if (f.exists() && !f.isDirectory()) {
+                continue;
+            }
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
                 bw.write(personId + ".lst:deid:deid\n");
             }
         }
