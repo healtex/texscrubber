@@ -12,6 +12,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.step.skip.AlwaysSkipItemSkipPolicy;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 
+import org.healtex.batch.exception.SkipFileException;
 import org.healtex.batch.processor.FirstPassItemProcessor;
 import org.healtex.batch.processor.SecondPassItemProcessor;
+import org.healtex.batch.listener.FirstPassSkipFileListener;
 import org.healtex.batch.listener.FirstPassStepExecutionListener;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.listener.SecondPassStepExecutionListener;
@@ -103,6 +106,10 @@ public class BatchConfiguration {
     public Step step1() {
         return stepBuilderFactory.get("step1")
                 .<Document, AnnotatedDocument> chunk(10)
+                .faultTolerant()
+                .skip(SkipFileException.class)
+                .skipPolicy(new AlwaysSkipItemSkipPolicy())
+                .listener(new FirstPassSkipFileListener())
                 .reader(reader())
                 .processor(processor1())
                 .writer(firstPassWriter())
@@ -114,6 +121,9 @@ public class BatchConfiguration {
     public Step step2() {
         return stepBuilderFactory.get("step2")
                 .<Document, AnnotatedDocument> chunk(10)
+                .faultTolerant()
+                .skip(SkipFileException.class)
+                .skipPolicy(new AlwaysSkipItemSkipPolicy())
                 .reader(reader())
                 .processor(processor2())
                 .writer(secondPassWriter())
