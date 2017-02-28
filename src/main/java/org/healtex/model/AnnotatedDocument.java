@@ -2,17 +2,17 @@ package org.healtex.model;
 
 import gate.AnnotationSet;
 import gate.creole.ResourceInstantiationException;
+import org.healtex.batch.processor.FirstPassItemProcessor;
+import org.healtex.batch.processor.SecondPassItemProcessor;
+import org.healtex.pipeline.ScrubberProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Should be removed and replaced by gate.Document
 public class AnnotatedDocument {
-    private String annotatedContent;
     private String fileName;
     private String personId;
     private String perPersonDocumentId;
-    private List<String> namedEntities;
     private gate.Document gateDocument;
 
     public AnnotatedDocument() {
@@ -26,9 +26,8 @@ public class AnnotatedDocument {
         }
     }
 
-
-    public String getScrubbedContent() {
-        return gateDocument.toXml();
+    public String getScrubbedText() {
+        return ScrubberProcessor.getDeidedText(gateDocument, SecondPassItemProcessor.SECOND_PASS_ANNOT_SET_NAME, "Lookup");
     }
 
     public String toXml() {
@@ -62,7 +61,7 @@ public class AnnotatedDocument {
 
     public List<String> getNamedEntities() {
         List<String> result = new ArrayList<>();
-        AnnotationSet annotations = this.gateDocument.getAnnotations("passOne");
+        AnnotationSet annotations = this.gateDocument.getAnnotations(FirstPassItemProcessor.FIRST_PASS_ANNOT_SET_NAME);
         for (gate.Annotation annotation : annotations) {
             result.add(gate.Utils.stringFor(this.gateDocument, annotation));
         }

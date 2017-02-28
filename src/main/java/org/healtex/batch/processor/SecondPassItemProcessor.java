@@ -2,6 +2,7 @@ package org.healtex.batch.processor;
 
 import gate.*;
 import gate.creole.SerialAnalyserController;
+import gate.creole.gazetteer.DefaultGazetteer;
 import gate.util.GateRuntimeException;
 import org.healtex.model.AnnotatedDocument;
 import org.healtex.model.Document;
@@ -15,6 +16,9 @@ public class SecondPassItemProcessor implements ItemProcessor<Document, Annotate
 
     private static final Logger log = LoggerFactory.getLogger(SecondPassItemProcessor.class);
     private String gazetteersPath;
+
+    public static final String
+            SECOND_PASS_ANNOT_SET_NAME = "deid";
 
     public SecondPassItemProcessor(String gazetteersPath) {
         this.gazetteersPath = gazetteersPath;
@@ -47,6 +51,7 @@ public class SecondPassItemProcessor implements ItemProcessor<Document, Annotate
         FeatureMap params = Factory.newFeatureMap();
         params.put(gate.creole.gazetteer.DefaultGazetteer.DEF_GAZ_LISTS_URL_PARAMETER_NAME,
                 new File(gztPath).toURI().toURL());
+        params.put(DefaultGazetteer.DEF_GAZ_ANNOT_SET_PARAMETER_NAME, SecondPassItemProcessor.SECOND_PASS_ANNOT_SET_NAME);
         LanguageAnalyser gzt = (LanguageAnalyser) Factory.createResource("gate.creole.gazetteer.DefaultGazetteer", params);
 
         SerialAnalyserController ner = (SerialAnalyserController) Factory.createResource("gate.creole.SerialAnalyserController");
@@ -57,8 +62,6 @@ public class SecondPassItemProcessor implements ItemProcessor<Document, Annotate
         corpus1.add(annotatedDoc.getGateDocument());
         ner.setCorpus(corpus1);
         ner.execute();
-//        gzt.setDocument(annotatedDoc.getGateDocument());
-//        gzt.execute();
         return annotatedDoc;
     }
 

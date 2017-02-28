@@ -28,8 +28,12 @@ public class DeidentifiedDocumentWriter implements ItemWriter<AnnotatedDocument>
         // Write results to documents
         for (AnnotatedDocument doc : documents) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(
-                    new File(outputPath + File.separator + doc.getFileName())))) {
+                    new File(outputPath + File.separator + doc.getFileName().concat(".xml"))))) {
                 bw.write(doc.toXml());
+            }
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(
+                    new File(outputPath + File.separator + doc.getFileName())))) {
+                bw.write(doc.getScrubbedText());
             }
         }
 
@@ -42,5 +46,4 @@ public class DeidentifiedDocumentWriter implements ItemWriter<AnnotatedDocument>
 //        }
 
     }
-
 }

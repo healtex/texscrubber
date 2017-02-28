@@ -9,6 +9,8 @@ import org.springframework.batch.item.ItemProcessor;
 
 
 public class FirstPassItemProcessor implements ItemProcessor<Document, AnnotatedDocument> {
+    public static final String
+            FIRST_PASS_ANNOT_SET_NAME = "passOne";
 
     private static final Logger log = LoggerFactory.getLogger(FirstPassItemProcessor.class);
     private NamedEntityExtractor namedEntityExtractor;
