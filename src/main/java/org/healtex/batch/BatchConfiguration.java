@@ -25,6 +25,7 @@ import org.healtex.batch.processor.SecondPassItemProcessor;
 import org.healtex.batch.listener.FirstPassStepExecutionListener;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.listener.SecondPassStepExecutionListener;
+import org.healtex.batch.listener.TexscrubberJobExecutionListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.batch.writer.DeidentifiedDocumentWriter;
 import org.healtex.batch.writer.NamedEntitiesWriter;
@@ -90,10 +91,12 @@ public class BatchConfiguration {
 
     // tag::jobstep[]
     @Bean
-    public Job texscrubberJob(JobCompletionNotificationListener listener) {
+    public Job texscrubberJob(JobCompletionNotificationListener listener,
+                              TexscrubberJobExecutionListener cleanupListener) {
         return jobBuilderFactory.get("texscrubberJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
+                .listener(cleanupListener)
                 .start(step1())
                 .next(step2())
                 .build();

@@ -37,13 +37,5 @@ public class DeidentifiedDocumentWriter implements ItemWriter<AnnotatedDocument>
             }
         }
 
-        // TODO: Perform removal of all patients gazetteers after job
-//        for (AnnotatedDocument doc : documents) {
-//            File f = new File(gazetteersPath + File.separator + doc.getPersonId() + ".lst");
-//            f.delete();
-//            f = new File(gazetteersPath + File.separator + doc.getPersonId() + ".def");
-//            f.delete();
-//        }
-
     }
 }
