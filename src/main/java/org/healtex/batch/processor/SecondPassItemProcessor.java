@@ -4,6 +4,8 @@ import gate.*;
 import gate.creole.SerialAnalyserController;
 import gate.creole.gazetteer.DefaultGazetteer;
 import gate.util.GateRuntimeException;
+import org.healtex.batch.exception.SkipFileException;
+import org.healtex.batch.listener.FirstPassSkipFileListener;
 import org.healtex.model.AnnotatedDocument;
 import org.healtex.model.Document;
 import org.slf4j.Logger;
@@ -39,6 +41,10 @@ public class SecondPassItemProcessor implements ItemProcessor<Document, Annotate
 
     @Override
     public AnnotatedDocument process(final Document doc) throws Exception {
+        if (FirstPassSkipFileListener.getSkippedFileNames().contains(doc.getFileName())) {
+            throw new SkipFileException(doc.getFileName() + " has been skipped in first pass of the job, will be skipped in second pass as well.");
+            // TODO potentially, instead of skipping the entire pipeline for this file, maybe we write a dummy file to tell the user this file failed?
+        }
         AnnotatedDocument annotatedDoc = new AnnotatedDocument();
 
         annotatedDoc.setFileName(doc.getFileName());

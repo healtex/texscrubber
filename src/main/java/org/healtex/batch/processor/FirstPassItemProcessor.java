@@ -1,5 +1,6 @@
 package org.healtex.batch.processor;
 
+import org.healtex.batch.exception.SkipFileException;
 import org.healtex.controller.NamedEntityExtractor;
 import org.healtex.model.AnnotatedDocument;
 import org.healtex.model.Document;
@@ -21,14 +22,18 @@ public class FirstPassItemProcessor implements ItemProcessor<Document, Annotated
 
     @Override
     public AnnotatedDocument process(final Document doc) throws Exception {
-
-        AnnotatedDocument annotatedDoc = new AnnotatedDocument();
-        annotatedDoc.setFileName(doc.getFileName());
-        annotatedDoc.setPerPersonDocumentId(doc.getPerPersonDocumentId());
-        annotatedDoc.setPersonId(doc.getPersonId());
-        annotatedDoc.setContent(doc.getContent());
-        namedEntityExtractor.run(annotatedDoc.getGateDocument());
-        return annotatedDoc;
+        // Catch all exception and replace by SkipFileException (which we explicitly allow the file to skip)
+        try {
+            AnnotatedDocument annotatedDoc = new AnnotatedDocument();
+            annotatedDoc.setFileName(doc.getFileName());
+            annotatedDoc.setPerPersonDocumentId(doc.getPerPersonDocumentId());
+            annotatedDoc.setPersonId(doc.getPersonId());
+            annotatedDoc.setContent(doc.getContent());
+            namedEntityExtractor.run(annotatedDoc.getGateDocument());
+            return annotatedDoc;
+        } catch (Exception ex) { // In the future, change this part to customize how to react to different exceptions
+            throw new SkipFileException(ex);
+        }
     }
 
 }
