@@ -105,7 +105,7 @@ public class FlatFileSingleItemReader extends ItemStreamSupport implements
             }
 
             while (line != null) {
-                sb.append(line);
+                sb.append(line + "\r\n");
                 line = this.reader.readLine();
             }
 
