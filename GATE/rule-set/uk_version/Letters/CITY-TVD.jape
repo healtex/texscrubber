@@ -1,0 +1,32 @@
+Phase: cityTVD
+Input: Token Lookup
+Options: control = all
+
+Macro: POSTNEG
+(
+{!Token.string ==~ "(?i)and|-|d|Professor|Med|pct|over|positive|Shopping|Range|Metro|Heath|Maelor|Crescent|Business|Way|Consultant|New|District|Park|Hospice|Close|Grove|General|Ctr|Hth|Hlth|Infirmary|Royal|Gateway|Surgery|Disability|Drive|House|Gardens?|Hall|Hospitals?|Health|Medical|Children|Centre|Lymphoma|Medical|Lane|Street|Road|Rd|Avenue"}
+) 
+
+Macro: PRENEG
+(
+{!Token.string ==~ "of|at|to|The|Dear|the|Dr|Mr|Mrs|Miss|Professor|[0-9]{1,3}"}({Token.string == "."})? //add: in
+) 
+
+
+Rule: CityTVD1
+(PRENEG):pre_neg
+({Lookup.minorType=="city"}):label
+(POSTNEG):post_neg
+--> 
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "LOCATION");   
+features.put("RULE", "CityTVD1");  
+outputAS.add(label.firstNode(), label.lastNode(), "CITY-TVD", features);  
+}
+
+/*
+NAME,STREET,EMAIL,HOSPITAL priority over CITY-TVD
+*/

@@ -1,0 +1,59 @@
+Phase: hospital
+Input: Token Lookup
+Options: control = appelt
+
+Macro: POSTNEG
+(
+{!Token.string ==~ "(?i)Ref"}
+)
+
+Rule: hospital0
+(  
+ {Lookup.minorType == hospital}  
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "LOCATION");   
+features.put("RULE", "hospital0");  
+outputAS.add(label.firstNode(), label.lastNode(), "HOSPITAL", features);  
+}
+
+Rule: hospital1
+(  
+ {Lookup.minorType == hospital1}  
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "LOCATION");   
+features.put("RULE", "hospital1");  
+outputAS.add(label.firstNode(), label.lastNode(), "HOSPITAL", features);  
+}
+
+
+Rule: hospital2
+({Token.string==~"at|the"}|{Token.string=="at"}{Token.string=="the"}):pre_context
+(  
+ {Token.string==~"MRI"} 
+):label
+-->  
+{  
+AnnotationSet label = bindings.get("label");  
+Annotation personAnn = label.iterator().next();  
+FeatureMap features = Factory.newFeatureMap(); 
+features.put("CATEGORY", "LOCATION");   
+features.put("RULE", "hospital2");  
+outputAS.add(label.firstNode(), label.lastNode(), "HOSPITAL", features);  
+}
+
+/*
+ADD:
+
+NOISY:
+Royal Manchester Children'sHospital
+*/

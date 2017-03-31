@@ -1,7 +1,7 @@
 package org.healtex.batch.writer;
 
 
-import org.healtex.model.GATEDocument;
+import org.healtex.model.AnnotatedDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 
-public class DeidentifiedDocumentWriter implements ItemWriter<GATEDocument> {
+public class DeidentifiedDocumentWriter implements ItemWriter<AnnotatedDocument> {
     private static final Logger LOG = LoggerFactory.getLogger(DeidentifiedDocumentWriter.class);
 
     private String outputPath;
@@ -23,22 +23,19 @@ public class DeidentifiedDocumentWriter implements ItemWriter<GATEDocument> {
     }
 
     @Override
-    public final void write(List<? extends GATEDocument> documents) throws Exception {
+    public final void write(List<? extends AnnotatedDocument> documents) throws Exception {
 
         // Write results to documents
-        for (GATEDocument doc : documents) {
+        for (AnnotatedDocument doc : documents) {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(
+                    new File(outputPath + File.separator + doc.getFileName().concat(".xml"))))) {
+                bw.write(doc.toXml());
+            }
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(
                     new File(outputPath + File.separator + doc.getFileName())))) {
-                bw.write(doc.getAnnotatedContent());
+                bw.write(doc.getScrubbedText());
             }
         }
 
-        // Remove all patients gazetteers
-        for (GATEDocument doc : documents) {
-            File f = new File(gazetteersPath + File.separator + doc.getPersonId() + ".lst");
-            f.delete();
-        }
-
     }
-
 }

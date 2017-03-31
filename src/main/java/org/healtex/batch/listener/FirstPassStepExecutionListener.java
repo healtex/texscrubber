@@ -21,16 +21,16 @@ public class FirstPassStepExecutionListener implements StepExecutionListener {
     }
 
     public ExitStatus afterStep(StepExecution stepExecution) {
-        log.info("Modify the step execution");
         ExecutionContext ec = stepExecution.getExecutionContext();
-
-        ArrayList<String> als = new ArrayList<String>();
-        ec.put("FAILED_LIST", als);
-        // TODO: Where to get list of failed id
-        // 1. task onError listener?
-        // 2. or processor remember it
-
-        // persist it someway
+        // Remarks:
+        //   Actually, if we use a static variable in FirstPassSkipFileListener
+        //   to store the names, it is overkill to use StepExecutionListener to
+        //   "pass" the names from step1 to step2. However, initially,
+        //   we took this approach because it may(?) work well in multi-host job.
+        //   Still, doing it this way has one advantage: the names are recorded
+        //   in the DB (if a job repo is used) for future checks.
+        ec.put("SKIPPED_FILE_NAMES",
+               FirstPassSkipFileListener.getSkippedFileNames());
         return null;
     }
 }

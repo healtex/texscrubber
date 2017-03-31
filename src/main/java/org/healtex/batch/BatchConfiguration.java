@@ -12,6 +12,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.step.skip.AlwaysSkipItemSkipPolicy;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 
+import org.healtex.batch.exception.SkipFileException;
 import org.healtex.batch.processor.FirstPassItemProcessor;
 import org.healtex.batch.processor.SecondPassItemProcessor;
+import org.healtex.batch.listener.FirstPassSkipFileListener;
 import org.healtex.batch.listener.FirstPassStepExecutionListener;
 import org.healtex.batch.listener.JobCompletionNotificationListener;
 import org.healtex.batch.listener.SecondPassStepExecutionListener;
+import org.healtex.batch.listener.TexscrubberJobExecutionListener;
 import org.healtex.batch.reader.FlatFileSingleItemReader;
 import org.healtex.batch.writer.DeidentifiedDocumentWriter;
 import org.healtex.batch.writer.NamedEntitiesWriter;
 import org.healtex.model.Document;
-import org.healtex.model.GATEDocument;
+import org.healtex.model.AnnotatedDocument;
 
 @Configuration
 @EnableBatchProcessing
@@ -69,19 +73,20 @@ public class BatchConfiguration {
         return new FirstPassItemProcessor();
     }
 
+    // TODO: All hardcoded paths need to be read from settings?
     @Bean
     public SecondPassItemProcessor processor2() {
-        return new SecondPassItemProcessor();
+        return new SecondPassItemProcessor("workspace/dev-test-output");
     }
 
     @Bean
-    public ItemWriter<GATEDocument> firstPassWriter() {
+    public ItemWriter<AnnotatedDocument> firstPassWriter() {
         NamedEntitiesWriter writer = new NamedEntitiesWriter("workspace/dev-test-output");
         return writer;
     }
 
     @Bean
-    public ItemWriter<GATEDocument> secondPassWriter() {
+    public ItemWriter<AnnotatedDocument> secondPassWriter() {
         DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2", "workspace/dev-test-output");
         return writer;
     }
@@ -89,10 +94,12 @@ public class BatchConfiguration {
 
     // tag::jobstep[]
     @Bean
-    public Job texscrubberJob(JobCompletionNotificationListener listener) {
+    public Job texscrubberJob(JobCompletionNotificationListener listener,
+                              TexscrubberJobExecutionListener cleanupListener) {
         return jobBuilderFactory.get("texscrubberJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
+                .listener(cleanupListener)
                 .start(step1())
                 .next(step2())
                 .build();
@@ -101,7 +108,11 @@ public class BatchConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .<Document, GATEDocument> chunk(10)
+                .<Document, AnnotatedDocument> chunk(10)
+                .faultTolerant()
+                .skip(SkipFileException.class)
+                .skipPolicy(new AlwaysSkipItemSkipPolicy())
+                .listener(new FirstPassSkipFileListener())
                 .reader(reader())
                 .processor(processor1())
                 .writer(firstPassWriter())
@@ -112,7 +123,10 @@ public class BatchConfiguration {
     @Bean
     public Step step2() {
         return stepBuilderFactory.get("step2")
-                .<Document, GATEDocument> chunk(10)
+                .<Document, AnnotatedDocument> chunk(10)
+                .faultTolerant()
+                .skip(SkipFileException.class)
+                .skipPolicy(new AlwaysSkipItemSkipPolicy())
                 .reader(reader())
                 .processor(processor2())
                 .writer(secondPassWriter())
