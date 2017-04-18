@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: uk.ac.gate:gate-asm:5.0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/uk.ac.gate/gate-asm/5.0.3/324b64b76c95b4e27a2dd74b05f81ad7334e22c3/gate-asm-5.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/uk.ac.gate/gate-asm/5.0.3/c82eb67b782c038cb0c967ea1fe6a0c81e500285/gate-asm-5.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
