@@ -39,16 +39,18 @@ public class PreProcess {
 		/*
 		 * init GATE
 		 */
-		Gate.setPluginsHome(new File("GATE/"));
-		Gate.setGateHome(new File("GATE/"));
-		Gate.runInSandbox(true);
-		
-		try {
-			Gate.init();
-		} catch (GateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(!Gate.isInitialised()) {
+			Gate.setPluginsHome(new File("GATE/"));
+			Gate.setGateHome(new File("GATE/"));
+			Gate.runInSandbox(true);
+			try {
+				Gate.init();
+			} catch (GateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
 	}
 	
 	

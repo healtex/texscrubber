@@ -318,10 +318,19 @@ public class StartWindow extends javax.swing.JFrame {
                 jProgressBarBatchProgress,
                 jButtonLaunchBatch,
                 jButtonCancelBatch);
+        runBatch.setInputDir(jTextFieldInputDir.getText());
+        File dir = new File(jTextFieldOutputDir.getText() + File.separator +"temp");
+        dir.mkdir();
 
+        try {
+            runBatch.setWorkingDir(dir.getCanonicalPath());
+            runBatch.setOutputDir(jTextFieldOutputDir.getText());
+            runBatch.addPropertyChangeListener(runBatch);
+            runBatch.execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        runBatch.addPropertyChangeListener(runBatch);
-        runBatch.execute();       
     }//GEN-LAST:event_jButtonLaunchBatchActionPerformed
 
     private void jMenuItemHomeCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHomeCardActionPerformed
@@ -342,7 +351,7 @@ public class StartWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void mainWindow(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

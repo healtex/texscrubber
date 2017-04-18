@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
 Implementation-Title: texscrubber
 Implementation-Version: 0.1
-Main-Class: org.healtex.Main
 

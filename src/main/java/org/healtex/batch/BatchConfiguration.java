@@ -16,8 +16,10 @@ import org.springframework.batch.core.step.skip.AlwaysSkipItemSkipPolicy;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.FileSystemResource;
 
@@ -37,9 +39,13 @@ import org.healtex.model.AnnotatedDocument;
 
 @Configuration
 @EnableBatchProcessing
+@SpringBootApplication
 public class BatchConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(BatchConfiguration.class);
+
+    @Autowired
+    Environment env;
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
@@ -52,7 +58,7 @@ public class BatchConfiguration {
     public MultiResourceItemReader<Document> reader() {
         MultiResourceItemReader<Document> reader = new MultiResourceItemReader<Document>();
 
-        File folder = new File("workspace/sample-input/");
+        File folder = new File(env.getProperty("inputDir"));
         List<Resource> resList = new ArrayList<Resource>();
 
         for (File file: folder.listFiles()) {
@@ -76,18 +82,18 @@ public class BatchConfiguration {
     // TODO: All hardcoded paths need to be read from settings?
     @Bean
     public SecondPassItemProcessor processor2() {
-        return new SecondPassItemProcessor("workspace/dev-test-output");
+        return new SecondPassItemProcessor(env.getProperty("workingDir"));
     }
 
     @Bean
     public ItemWriter<AnnotatedDocument> firstPassWriter() {
-        NamedEntitiesWriter writer = new NamedEntitiesWriter("workspace/dev-test-output");
+        NamedEntitiesWriter writer = new NamedEntitiesWriter(env.getProperty("workingDir"));
         return writer;
     }
 
     @Bean
     public ItemWriter<AnnotatedDocument> secondPassWriter() {
-        DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter("workspace/dev-test-output-2", "workspace/dev-test-output");
+        DeidentifiedDocumentWriter writer = new DeidentifiedDocumentWriter(env.getProperty("outputDir"), env.getProperty("workingDir"));
         return writer;
     }
     // end::readerwriterprocessor[]
